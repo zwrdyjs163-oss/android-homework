@@ -1,0 +1,15 @@
+*.iml
+.gradle
+/.idea
+/local.properties
+/debug.keystore
+deps_output.txt
+MT2026-L08-Android应用集成测试-v1-r6-20260521.pdf
+buildSrc/bin/
+/.gradle-local
+/.espresso-build
+*.DS_Store
+/build
+/captures
+.externalNativeBuild
+/debug.keystore
