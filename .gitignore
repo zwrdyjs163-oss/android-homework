@@ -21,3 +21,11 @@ local.properties
 .upload-repo/
 upload-to-github.ps1
 Seal-homework-upload.zip
+push-with-token.ps1
+.appium-tools/
+.appium-home/
+.appium-python/
+.npm-cache/
+.pip-cache/
+appium-practice-screenshot.png
+appium_pdf_notes.txt

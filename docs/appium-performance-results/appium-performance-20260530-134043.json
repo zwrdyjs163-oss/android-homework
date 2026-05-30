@@ -1,0 +1,242 @@
+{
+  "timestamp": "20260530-134043",
+  "device": "emulator-5554",
+  "package": "com.junkfood.seal.debug",
+  "activity": "com.junkfood.seal.MainActivity",
+  "cold_start": {
+    "raw": "Starting: Intent { cmp=com.junkfood.seal.debug/com.junkfood.seal.MainActivity }\nStatus: ok\nLaunchState: COLD\nActivity: com.junkfood.seal.debug/com.junkfood.seal.MainActivity\nTotalTime: 2887\nWaitTime: 2889\nComplete",
+    "metrics": {
+      "TotalTime": 2887,
+      "WaitTime": 2889
+    }
+  },
+  "page_source_length": 17893,
+  "window_size": {
+    "width": 1440,
+    "height": 3120
+  },
+  "appium_performance": {
+    "supported_types": [
+      "cpuinfo",
+      "memoryinfo",
+      "batteryinfo",
+      "networkinfo"
+    ],
+    "memoryinfo": [
+      [
+        "totalPrivateDirty",
+        "nativePrivateDirty",
+        "dalvikPrivateDirty",
+        "eglPrivateDirty",
+        "glPrivateDirty",
+        "totalPss",
+        "nativePss",
+        "dalvikPss",
+        "eglPss",
+        "glPss",
+        "nativeHeapAllocatedSize",
+        "nativeHeapSize",
+        "nativeRss",
+        "dalvikRss",
+        "totalRss"
+      ],
+      [
+        "116284",
+        "13580",
+        "6728",
+        null,
+        null,
+        "144906",
+        "13620",
+        "6780",
+        null,
+        null,
+        "20973",
+        "27728",
+        "15104",
+        "8696",
+        "262036"
+      ]
+    ],
+    "cpuinfo": [
+      [
+        "user",
+        "kernel"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "batteryinfo": [
+      [
+        "power"
+      ],
+      [
+        "100"
+      ]
+    ],
+    "networkinfo": [
+      [
+        "st",
+        "activeTime",
+        "rb",
+        "rp",
+        "tb",
+        "tp",
+        "op",
+        "bucketDuration"
+      ],
+      [
+        "1778716800",
+        null,
+        "352",
+        "4",
+        "620",
+        "9",
+        "0",
+        "3600"
+      ],
+      [
+        "NetworkStatsHistory: bucketDuration=",
+        null,
+        "352",
+        "4",
+        "620",
+        "9",
+        "0",
+        "3600"
+      ],
+      [
+        "1778716800",
+        null,
+        "69324",
+        "306",
+        "318101",
+        "2695",
+        "0",
+        "3600"
+      ],
+      [
+        "1778720400",
+        null,
+        "82441",
+        "354",
+        "382821",
+        "3236",
+        "0",
+        "3600"
+      ],
+      [
+        "1779080400",
+        null,
+        "3291",
+        "22",
+        "16069",
+        "155",
+        "0",
+        "3600"
+      ],
+      [
+        "1779084000",
+        null,
+        "31376",
+        "250",
+        "158248",
+        "1577",
+        "0",
+        "3600"
+      ],
+      [
+        "1779458400",
+        null,
+        "25932",
+        "214",
+        "117025",
+        "1055",
+        "0",
+        "3600"
+      ],
+      [
+        "1779922800",
+        null,
+        "18026",
+        "196",
+        "98690",
+        "934",
+        "0",
+        "3600"
+      ],
+      [
+        "1779926400",
+        null,
+        "1465",
+        "19",
+        "5000",
+        "65",
+        "0",
+        "3600"
+      ],
+      [
+        "1780113600",
+        null,
+        "3529",
+        "27",
+        "16996",
+        "147",
+        "0",
+        "3600"
+      ],
+      [
+        "1780117200",
+        null,
+        "13792",
+        "103",
+        "66438",
+        "572",
+        "0",
+        "3600"
+      ],
+      [
+        "",
+        null,
+        "13792",
+        "103",
+        "66438",
+        "572",
+        "0",
+        "3600"
+      ],
+      [
+        "BPF",
+        null,
+        "13792",
+        "103",
+        "66438",
+        "572",
+        "0",
+        "3600"
+      ],
+      [
+        "SkDestroyListener",
+        null,
+        "13792",
+        "103",
+        "66438",
+        "572",
+        "0",
+        "3600"
+      ],
+      [
+        "",
+        null,
+        "13792",
+        "103",
+        "66438",
+        "572",
+        "Top distinct tag counts in UidTagSets:",
+        "3600"
+      ]
+    ]
+  }
+}
