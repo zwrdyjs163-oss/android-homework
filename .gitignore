@@ -29,3 +29,5 @@ push-with-token.ps1
 .pip-cache/
 appium-practice-screenshot.png
 appium_pdf_notes.txt
+tools/
+bundletool-output/

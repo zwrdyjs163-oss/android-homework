@@ -1,0 +1,1340 @@
+{
+  "generated_at": "2026-06-03T12:56:49",
+  "apk_path": "F:\\study\\Android\\Seal-main\\bundletool-output\\Seal-from-aab-universal-debug.apk",
+  "basic": {
+    "is_valid_apk": true,
+    "app_name": "Seal Debug",
+    "package": "com.junkfood.seal.debug",
+    "version_code": "200000150",
+    "version_name": "2.0.0-alpha.5-(F-Droid)-debug",
+    "min_sdk": "24",
+    "target_sdk": "35",
+    "main_activity": "com.junkfood.seal.MainActivity"
+  },
+  "components": {
+    "activities_count": 4,
+    "services_count": 3,
+    "receivers_count": 2,
+    "providers_count": 2,
+    "activities": [
+      "com.junkfood.seal.CrashReportActivity",
+      "com.junkfood.seal.MainActivity",
+      "androidx.compose.ui.tooling.PreviewActivity",
+      "com.junkfood.seal.QuickDownloadActivity"
+    ],
+    "services": [
+      "com.junkfood.seal.DownloadService",
+      "androidx.appcompat.app.AppLocalesMetadataHolderService",
+      "androidx.room.MultiInstanceInvalidationService"
+    ],
+    "receivers": [
+      "com.junkfood.seal.NotificationActionReceiver",
+      "androidx.profileinstaller.ProfileInstallReceiver"
+    ],
+    "providers": [
+      "androidx.core.content.FileProvider",
+      "androidx.startup.InitializationProvider"
+    ],
+    "application": {
+      "debuggable": true,
+      "allowBackup": true,
+      "name": "com.junkfood.seal.App"
+    },
+    "exported_components_count": 4,
+    "exported_components": [
+      {
+        "type": "activity",
+        "name": "com.junkfood.seal.QuickDownloadActivity",
+        "exported": "true",
+        "exported_bool": true,
+        "has_intent_filter": true
+      },
+      {
+        "type": "activity",
+        "name": "com.junkfood.seal.MainActivity",
+        "exported": "true",
+        "exported_bool": true,
+        "has_intent_filter": true
+      },
+      {
+        "type": "activity",
+        "name": "androidx.compose.ui.tooling.PreviewActivity",
+        "exported": "true",
+        "exported_bool": true,
+        "has_intent_filter": false
+      },
+      {
+        "type": "receiver",
+        "name": "androidx.profileinstaller.ProfileInstallReceiver",
+        "exported": "true",
+        "exported_bool": true,
+        "has_intent_filter": true
+      }
+    ],
+    "intent_filters_count": 3,
+    "intent_filters": [
+      {
+        "type": "activity",
+        "name": "com.junkfood.seal.MainActivity",
+        "actions": [
+          "android.intent.action.MAIN",
+          "android.intent.action.SEND",
+          "android.intent.action.VIEW"
+        ],
+        "categories": [
+          "android.intent.category.LAUNCHER",
+          "android.intent.category.DEFAULT",
+          "android.intent.category.BROWSABLE"
+        ],
+        "data": [
+          {
+            "mimeType": "text/plain"
+          },
+          {
+            "scheme": "http"
+          },
+          {
+            "scheme": "https"
+          },
+          {
+            "mimeType": "video/*"
+          },
+          {
+            "mimeType": "audio/*"
+          }
+        ]
+      },
+      {
+        "type": "activity",
+        "name": "com.junkfood.seal.QuickDownloadActivity",
+        "actions": [
+          "android.intent.action.SEND",
+          "android.intent.action.VIEW"
+        ],
+        "categories": [
+          "android.intent.category.DEFAULT",
+          "android.intent.category.BROWSABLE"
+        ],
+        "data": [
+          {
+            "mimeType": "text/plain"
+          },
+          {
+            "scheme": "http"
+          },
+          {
+            "scheme": "https"
+          },
+          {
+            "mimeType": "video/*"
+          },
+          {
+            "mimeType": "audio/*"
+          }
+        ]
+      },
+      {
+        "type": "receiver",
+        "name": "androidx.profileinstaller.ProfileInstallReceiver",
+        "actions": [
+          "androidx.profileinstaller.action.INSTALL_PROFILE",
+          "androidx.profileinstaller.action.SKIP_FILE",
+          "androidx.profileinstaller.action.SAVE_PROFILE",
+          "androidx.profileinstaller.action.BENCHMARK_OPERATION"
+        ],
+        "categories": [],
+        "data": []
+      }
+    ]
+  },
+  "permissions": {
+    "count": 10,
+    "items": [
+      "android.permission.ACCESS_NETWORK_STATE",
+      "android.permission.FOREGROUND_SERVICE",
+      "android.permission.FOREGROUND_SERVICE_SPECIAL_USE",
+      "android.permission.INTERNET",
+      "android.permission.MANAGE_EXTERNAL_STORAGE",
+      "android.permission.POST_NOTIFICATIONS",
+      "android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS",
+      "android.permission.REQUEST_INSTALL_PACKAGES",
+      "android.permission.WRITE_EXTERNAL_STORAGE",
+      "com.junkfood.seal.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+    ]
+  },
+  "files": {
+    "count": 999,
+    "dex_names": [
+      "classes.dex",
+      "classes10.dex",
+      "classes11.dex",
+      "classes12.dex",
+      "classes13.dex",
+      "classes14.dex",
+      "classes15.dex",
+      "classes16.dex",
+      "classes17.dex",
+      "classes18.dex",
+      "classes19.dex",
+      "classes2.dex",
+      "classes3.dex",
+      "classes4.dex",
+      "classes5.dex",
+      "classes6.dex",
+      "classes7.dex",
+      "classes8.dex",
+      "classes9.dex"
+    ],
+    "native_libs_count": 36,
+    "native_libs_sample": [
+      "lib/arm64-v8a/libandroidx.graphics.path.so",
+      "lib/arm64-v8a/libaria2c.so",
+      "lib/arm64-v8a/libaria2c.zip.so",
+      "lib/arm64-v8a/libffmpeg.so",
+      "lib/arm64-v8a/libffmpeg.zip.so",
+      "lib/arm64-v8a/libffprobe.so",
+      "lib/arm64-v8a/libmmkv.so",
+      "lib/arm64-v8a/libpython.so",
+      "lib/arm64-v8a/libpython.zip.so",
+      "lib/armeabi-v7a/libandroidx.graphics.path.so",
+      "lib/armeabi-v7a/libaria2c.so",
+      "lib/armeabi-v7a/libaria2c.zip.so",
+      "lib/armeabi-v7a/libffmpeg.so",
+      "lib/armeabi-v7a/libffmpeg.zip.so",
+      "lib/armeabi-v7a/libffprobe.so",
+      "lib/armeabi-v7a/libmmkv.so",
+      "lib/armeabi-v7a/libpython.so",
+      "lib/armeabi-v7a/libpython.zip.so",
+      "lib/x86/libandroidx.graphics.path.so",
+      "lib/x86/libaria2c.so",
+      "lib/x86/libaria2c.zip.so",
+      "lib/x86/libffmpeg.so",
+      "lib/x86/libffmpeg.zip.so",
+      "lib/x86/libffprobe.so",
+      "lib/x86/libmmkv.so",
+      "lib/x86/libpython.so",
+      "lib/x86/libpython.zip.so",
+      "lib/x86_64/libandroidx.graphics.path.so",
+      "lib/x86_64/libaria2c.so",
+      "lib/x86_64/libaria2c.zip.so"
+    ],
+    "extension_top": [
+      {
+        "name": ".xml",
+        "count": 640
+      },
+      {
+        "name": ".png",
+        "count": 185
+      },
+      {
+        "name": ".version",
+        "count": 90
+      },
+      {
+        "name": ".so",
+        "count": 36
+      },
+      {
+        "name": ".dex",
+        "count": 19
+      },
+      {
+        "name": ".kotlin_builtins",
+        "count": 7
+      },
+      {
+        "name": ".txt",
+        "count": 4
+      },
+      {
+        "name": ".webp",
+        "count": 4
+      },
+      {
+        "name": ".properties",
+        "count": 2
+      },
+      {
+        "name": ".json",
+        "count": 2
+      },
+      {
+        "name": "<no_ext>",
+        "count": 2
+      },
+      {
+        "name": ".bin",
+        "count": 1
+      },
+      {
+        "name": ".jsonfactory",
+        "count": 1
+      },
+      {
+        "name": ".objectcodec",
+        "count": 1
+      },
+      {
+        "name": ".coroutineexceptionhandler",
+        "count": 1
+      }
+    ]
+  },
+  "dex": {
+    "dex_count": 19,
+    "total_classes": 36716,
+    "total_methods": 222906,
+    "app_classes": 3497,
+    "app_methods": 16340,
+    "external_or_library_classes": 33219,
+    "dex_summaries": [
+      {
+        "index": 1,
+        "classes": 17086,
+        "methods": 64245,
+        "fields": 29785,
+        "strings": 120226
+      },
+      {
+        "index": 2,
+        "classes": 326,
+        "methods": 1659,
+        "fields": 775,
+        "strings": 2559
+      },
+      {
+        "index": 3,
+        "classes": 150,
+        "methods": 887,
+        "fields": 395,
+        "strings": 1733
+      },
+      {
+        "index": 4,
+        "classes": 314,
+        "methods": 1911,
+        "fields": 867,
+        "strings": 3468
+      },
+      {
+        "index": 5,
+        "classes": 506,
+        "methods": 2866,
+        "fields": 1358,
+        "strings": 4997
+      },
+      {
+        "index": 6,
+        "classes": 204,
+        "methods": 1205,
+        "fields": 461,
+        "strings": 2080
+      },
+      {
+        "index": 7,
+        "classes": 412,
+        "methods": 2523,
+        "fields": 1186,
+        "strings": 4058
+      },
+      {
+        "index": 8,
+        "classes": 232,
+        "methods": 1440,
+        "fields": 639,
+        "strings": 2619
+      },
+      {
+        "index": 9,
+        "classes": 90,
+        "methods": 456,
+        "fields": 35,
+        "strings": 603
+      },
+      {
+        "index": 10,
+        "classes": 3,
+        "methods": 49,
+        "fields": 10,
+        "strings": 153
+      },
+      {
+        "index": 11,
+        "classes": 7,
+        "methods": 125,
+        "fields": 41,
+        "strings": 364
+      },
+      {
+        "index": 12,
+        "classes": 8063,
+        "methods": 65173,
+        "fields": 32573,
+        "strings": 88442
+      },
+      {
+        "index": 13,
+        "classes": 6706,
+        "methods": 64611,
+        "fields": 20523,
+        "strings": 76106
+      },
+      {
+        "index": 14,
+        "classes": 857,
+        "methods": 6552,
+        "fields": 2382,
+        "strings": 8734
+      },
+      {
+        "index": 15,
+        "classes": 416,
+        "methods": 445,
+        "fields": 24145,
+        "strings": 7769
+      },
+      {
+        "index": 16,
+        "classes": 26,
+        "methods": 201,
+        "fields": 78,
+        "strings": 508
+      },
+      {
+        "index": 17,
+        "classes": 270,
+        "methods": 1543,
+        "fields": 601,
+        "strings": 2554
+      },
+      {
+        "index": 18,
+        "classes": 887,
+        "methods": 5908,
+        "fields": 2846,
+        "strings": 9537
+      },
+      {
+        "index": 19,
+        "classes": 161,
+        "methods": 1107,
+        "fields": 360,
+        "strings": 2030
+      }
+    ],
+    "top_packages": [
+      {
+        "name": "androidx.compose.material",
+        "count": 12390
+      },
+      {
+        "name": "com.junkfood.seal",
+        "count": 3497
+      },
+      {
+        "name": "androidx.compose.foundation",
+        "count": 2719
+      },
+      {
+        "name": "androidx.compose.ui",
+        "count": 2640
+      },
+      {
+        "name": "androidx.compose.material3",
+        "count": 2592
+      },
+      {
+        "name": "com.google.android",
+        "count": 1286
+      },
+      {
+        "name": "com.fasterxml.jackson",
+        "count": 843
+      },
+      {
+        "name": "androidx.compose.runtime",
+        "count": 708
+      },
+      {
+        "name": "androidx.compose.animation",
+        "count": 489
+      },
+      {
+        "name": "kotlinx.coroutines.flow",
+        "count": 358
+      },
+      {
+        "name": "org.apache.commons",
+        "count": 356
+      },
+      {
+        "name": "androidx.constraintlayout.compose",
+        "count": 295
+      },
+      {
+        "name": "androidx.core.view",
+        "count": 269
+      },
+      {
+        "name": "androidx.appcompat.widget",
+        "count": 263
+      },
+      {
+        "name": "androidx.constraintlayout.core",
+        "count": 258
+      },
+      {
+        "name": "org.koin.core",
+        "count": 232
+      },
+      {
+        "name": "androidx.core.app",
+        "count": 224
+      },
+      {
+        "name": "androidx.fragment.app",
+        "count": 201
+      },
+      {
+        "name": "androidx.recyclerview.widget",
+        "count": 175
+      },
+      {
+        "name": "com.google.accompanist",
+        "count": 167
+      }
+    ],
+    "top_app_packages": [
+      {
+        "name": "com.junkfood.seal.ui",
+        "count": 3130
+      },
+      {
+        "name": "com.junkfood.seal.util",
+        "count": 123
+      },
+      {
+        "name": "com.junkfood.seal.download",
+        "count": 78
+      },
+      {
+        "name": "com.junkfood.seal.database",
+        "count": 76
+      },
+      {
+        "name": "com.junkfood.seal.App$$ExternalSyntheticLambda0",
+        "count": 1
+      },
+      {
+        "name": "com.junkfood.seal.App$$ExternalSyntheticLambda1",
+        "count": 1
+      },
+      {
+        "name": "com.junkfood.seal.App$$ExternalSyntheticLambda2",
+        "count": 1
+      },
+      {
+        "name": "com.junkfood.seal.App$$ExternalSyntheticLambda3",
+        "count": 1
+      },
+      {
+        "name": "com.junkfood.seal.App$$ExternalSyntheticLambda4",
+        "count": 1
+      },
+      {
+        "name": "com.junkfood.seal.App$$ExternalSyntheticLambda5",
+        "count": 1
+      },
+      {
+        "name": "com.junkfood.seal.App$$ExternalSyntheticLambda6",
+        "count": 1
+      },
+      {
+        "name": "com.junkfood.seal.App$$ExternalSyntheticLambda7",
+        "count": 1
+      },
+      {
+        "name": "com.junkfood.seal.App$Companion$WhenMappings",
+        "count": 1
+      },
+      {
+        "name": "com.junkfood.seal.App$Companion$connection$1",
+        "count": 1
+      },
+      {
+        "name": "com.junkfood.seal.App$Companion",
+        "count": 1
+      },
+      {
+        "name": "com.junkfood.seal.App$onCreate$3$2",
+        "count": 1
+      },
+      {
+        "name": "com.junkfood.seal.App$onCreate$3",
+        "count": 1
+      },
+      {
+        "name": "com.junkfood.seal.App",
+        "count": 1
+      },
+      {
+        "name": "com.junkfood.seal.BuildConfig",
+        "count": 1
+      },
+      {
+        "name": "com.junkfood.seal.CrashReportActivity$onCreate$1$1$1$$ExternalSyntheticLambda0",
+        "count": 1
+      }
+    ],
+    "app_class_samples": [
+      "com.junkfood.seal.App$$ExternalSyntheticLambda0",
+      "com.junkfood.seal.App$$ExternalSyntheticLambda1",
+      "com.junkfood.seal.App$$ExternalSyntheticLambda2",
+      "com.junkfood.seal.App$$ExternalSyntheticLambda3",
+      "com.junkfood.seal.App$$ExternalSyntheticLambda4",
+      "com.junkfood.seal.App$$ExternalSyntheticLambda5",
+      "com.junkfood.seal.App$$ExternalSyntheticLambda6",
+      "com.junkfood.seal.App$$ExternalSyntheticLambda7",
+      "com.junkfood.seal.App$Companion$WhenMappings",
+      "com.junkfood.seal.App$Companion$connection$1",
+      "com.junkfood.seal.App$Companion",
+      "com.junkfood.seal.App$onCreate$3$2",
+      "com.junkfood.seal.App$onCreate$3",
+      "com.junkfood.seal.App",
+      "com.junkfood.seal.BuildConfig",
+      "com.junkfood.seal.CrashReportActivity$onCreate$1$1$1$$ExternalSyntheticLambda0",
+      "com.junkfood.seal.CrashReportActivity$onCreate$1$1$1",
+      "com.junkfood.seal.CrashReportActivity$onCreate$1$1",
+      "com.junkfood.seal.CrashReportActivity$onCreate$1",
+      "com.junkfood.seal.CrashReportActivity",
+      "com.junkfood.seal.CrashReportActivityKt$$ExternalSyntheticLambda0",
+      "com.junkfood.seal.CrashReportActivityKt$$ExternalSyntheticLambda1",
+      "com.junkfood.seal.CrashReportActivityKt$CrashReportPage$2",
+      "com.junkfood.seal.CrashReportActivityKt$CrashReportPage$3",
+      "com.junkfood.seal.CrashReportActivityKt",
+      "com.junkfood.seal.DownloadService$DownloadServiceBinder",
+      "com.junkfood.seal.DownloadService",
+      "com.junkfood.seal.DownloadServiceKt",
+      "com.junkfood.seal.Downloader$$ExternalSyntheticLambda0",
+      "com.junkfood.seal.Downloader$$ExternalSyntheticLambda1",
+      "com.junkfood.seal.Downloader$1$1",
+      "com.junkfood.seal.Downloader$1$2",
+      "com.junkfood.seal.Downloader$1$3",
+      "com.junkfood.seal.Downloader$1",
+      "com.junkfood.seal.Downloader$CustomCommandTask$State$Canceled",
+      "com.junkfood.seal.Downloader$CustomCommandTask$State$Completed",
+      "com.junkfood.seal.Downloader$CustomCommandTask$State$Error",
+      "com.junkfood.seal.Downloader$CustomCommandTask$State$Running",
+      "com.junkfood.seal.Downloader$CustomCommandTask$State",
+      "com.junkfood.seal.Downloader$CustomCommandTask$onRestart$1",
+      "com.junkfood.seal.Downloader$CustomCommandTask",
+      "com.junkfood.seal.Downloader$DownloadTaskItem",
+      "com.junkfood.seal.Downloader$ErrorState$DownloadError",
+      "com.junkfood.seal.Downloader$ErrorState$FetchInfoError",
+      "com.junkfood.seal.Downloader$ErrorState$None",
+      "com.junkfood.seal.Downloader$ErrorState",
+      "com.junkfood.seal.Downloader$State$DownloadingPlaylist",
+      "com.junkfood.seal.Downloader$State$DownloadingVideo",
+      "com.junkfood.seal.Downloader$State$FetchingInfo",
+      "com.junkfood.seal.Downloader$State$Idle"
+    ],
+    "app_class_method_samples": [
+      {
+        "class": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-1$1",
+        "methods": [
+          "<clinit>",
+          "<init>",
+          "invoke",
+          "invoke"
+        ],
+        "method_count": 4
+      },
+      {
+        "class": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-10$1",
+        "methods": [
+          "<clinit>",
+          "<init>",
+          "invoke",
+          "invoke"
+        ],
+        "method_count": 4
+      },
+      {
+        "class": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-11$1",
+        "methods": [
+          "<clinit>",
+          "<init>",
+          "invoke",
+          "invoke"
+        ],
+        "method_count": 4
+      },
+      {
+        "class": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-12$1",
+        "methods": [
+          "<clinit>",
+          "<init>",
+          "invoke",
+          "invoke"
+        ],
+        "method_count": 4
+      },
+      {
+        "class": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-2$1",
+        "methods": [
+          "<clinit>",
+          "<init>",
+          "invoke",
+          "invoke"
+        ],
+        "method_count": 4
+      },
+      {
+        "class": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-3$1",
+        "methods": [
+          "<clinit>",
+          "<init>",
+          "invoke",
+          "invoke"
+        ],
+        "method_count": 4
+      },
+      {
+        "class": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-4$1",
+        "methods": [
+          "<clinit>",
+          "<init>",
+          "invoke",
+          "invoke"
+        ],
+        "method_count": 4
+      },
+      {
+        "class": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-5$1",
+        "methods": [
+          "<clinit>",
+          "<init>",
+          "invoke",
+          "invoke"
+        ],
+        "method_count": 4
+      },
+      {
+        "class": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-6$1",
+        "methods": [
+          "<clinit>",
+          "<init>",
+          "invoke",
+          "invoke"
+        ],
+        "method_count": 4
+      },
+      {
+        "class": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-7$1",
+        "methods": [
+          "<clinit>",
+          "<init>",
+          "invoke",
+          "invoke"
+        ],
+        "method_count": 4
+      },
+      {
+        "class": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-8$1",
+        "methods": [
+          "<clinit>",
+          "<init>",
+          "invoke",
+          "invoke"
+        ],
+        "method_count": 4
+      },
+      {
+        "class": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-9$1",
+        "methods": [
+          "<clinit>",
+          "<init>",
+          "invoke",
+          "invoke"
+        ],
+        "method_count": 4
+      },
+      {
+        "class": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt",
+        "methods": [
+          "<clinit>",
+          "<init>",
+          "getLambda-1$app_fdroidDebug",
+          "getLambda-10$app_fdroidDebug",
+          "getLambda-11$app_fdroidDebug",
+          "getLambda-12$app_fdroidDebug",
+          "getLambda-2$app_fdroidDebug",
+          "getLambda-3$app_fdroidDebug"
+        ],
+        "method_count": 14
+      },
+      {
+        "class": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$FormatSettingDialogsKt$lambda-1$1",
+        "methods": [
+          "<clinit>",
+          "<init>",
+          "invoke",
+          "invoke"
+        ],
+        "method_count": 4
+      },
+      {
+        "class": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$FormatSettingDialogsKt$lambda-10$1",
+        "methods": [
+          "<clinit>",
+          "<init>",
+          "invoke",
+          "invoke"
+        ],
+        "method_count": 4
+      }
+    ]
+  },
+  "call_graph": {
+    "scope": "classes under com.junkfood.seal",
+    "nodes": 17276,
+    "edges": 53967,
+    "top_degree_methods": [
+      {
+        "method": "java.lang.Object.<init>()V",
+        "in_degree": 3072,
+        "out_degree": 0,
+        "total_degree": 3072
+      },
+      {
+        "method": "androidx.compose.runtime.ComposerKt.traceEventEnd()V",
+        "in_degree": 1486,
+        "out_degree": 0,
+        "total_degree": 1486
+      },
+      {
+        "method": "androidx.compose.runtime.ComposerKt.isTraceInProgress()Z",
+        "in_degree": 1486,
+        "out_degree": 0,
+        "total_degree": 1486
+      },
+      {
+        "method": "androidx.compose.runtime.ComposerKt.traceEventStart(I I I Ljava/lang/String;)V",
+        "in_degree": 1486,
+        "out_degree": 0,
+        "total_degree": 1486
+      },
+      {
+        "method": "androidx.compose.runtime.ComposerKt.sourceInformation(Landroidx/compose/runtime/Composer; Ljava/lang/String;)V",
+        "in_degree": 1484,
+        "out_degree": 0,
+        "total_degree": 1484
+      },
+      {
+        "method": "androidx.compose.runtime.Composer.skipToGroupEnd()V",
+        "in_degree": 1378,
+        "out_degree": 0,
+        "total_degree": 1378
+      },
+      {
+        "method": "androidx.compose.runtime.Composer.getSkipping()Z",
+        "in_degree": 1359,
+        "out_degree": 0,
+        "total_degree": 1359
+      },
+      {
+        "method": "kotlin.jvm.internal.Intrinsics.checkNotNullParameter(Ljava/lang/Object; Ljava/lang/String;)V",
+        "in_degree": 1258,
+        "out_degree": 0,
+        "total_degree": 1258
+      },
+      {
+        "method": "java.lang.Number.intValue()I",
+        "in_degree": 1213,
+        "out_degree": 0,
+        "total_degree": 1213
+      },
+      {
+        "method": "androidx.compose.runtime.Composer.startReplaceGroup(I)V",
+        "in_degree": 749,
+        "out_degree": 0,
+        "total_degree": 749
+      },
+      {
+        "method": "androidx.compose.runtime.Composer.endReplaceGroup()V",
+        "in_degree": 749,
+        "out_degree": 0,
+        "total_degree": 749
+      },
+      {
+        "method": "androidx.compose.runtime.Composer.rememberedValue()Ljava/lang/Object;",
+        "in_degree": 742,
+        "out_degree": 0,
+        "total_degree": 742
+      },
+      {
+        "method": "androidx.compose.runtime.Composer.updateRememberedValue(Ljava/lang/Object;)V",
+        "in_degree": 742,
+        "out_degree": 0,
+        "total_degree": 742
+      },
+      {
+        "method": "androidx.compose.runtime.Composer$Companion.getEmpty()Ljava/lang/Object;",
+        "in_degree": 668,
+        "out_degree": 0,
+        "total_degree": 668
+      },
+      {
+        "method": "androidx.compose.runtime.Composer.changed(Ljava/lang/Object;)Z",
+        "in_degree": 513,
+        "out_degree": 0,
+        "total_degree": 513
+      },
+      {
+        "method": "androidx.compose.ui.res.StringResources_androidKt.stringResource(I Landroidx/compose/runtime/Composer; I)Ljava/lang/String;",
+        "in_degree": 497,
+        "out_degree": 0,
+        "total_degree": 497
+      },
+      {
+        "method": "androidx.compose.runtime.Composer.changedInstance(Ljava/lang/Object;)Z",
+        "in_degree": 373,
+        "out_degree": 0,
+        "total_degree": 373
+      },
+      {
+        "method": "java.lang.Integer.intValue()I",
+        "in_degree": 361,
+        "out_degree": 0,
+        "total_degree": 361
+      },
+      {
+        "method": "androidx.compose.material3.TextKt.Text--4IGK_g(Ljava/lang/String; Landroidx/compose/ui/Modifier; J J Landroidx/compose/ui/text/font/FontStyle; Landroidx/compose/ui/text/font/FontWeight; Landroidx/compose/ui/text/font/FontFamily; J Landroidx/compose/ui/text/style/TextDecoration; Landroidx/compose/ui/text/style/TextAlign; J I Z I I Lkotlin/jvm/functions/Function1; Landroidx/compose/ui/text/TextStyle; Landroidx/compose/runtime/Composer; I I I)V",
+        "in_degree": 347,
+        "out_degree": 0,
+        "total_degree": 347
+      },
+      {
+        "method": "kotlin.jvm.internal.Intrinsics.areEqual(Ljava/lang/Object; Ljava/lang/Object;)Z",
+        "in_degree": 322,
+        "out_degree": 0,
+        "total_degree": 322
+      }
+    ],
+    "top_app_degree_methods": [
+      {
+        "method": "com.junkfood.seal.ui.page.download.DownloadPageKt.DownloadPage(Lkotlin/jvm/functions/Function0; Lkotlin/jvm/functions/Function0; Lkotlin/jvm/functions/Function0; Lkotlin/jvm/functions/Function0; Lkotlin/jvm/functions/Function0; Lkotlin/jvm/functions/Function1; Lcom/junkfood/seal/download/DownloaderV2; Lcom/junkfood/seal/ui/page/download/HomePageViewModel; Lcom/junkfood/seal/ui/page/downloadv2/configure/DownloadDialogViewModel; Landroidx/compose/runtime/Composer; I I)V",
+        "in_degree": 1,
+        "out_degree": 150,
+        "total_degree": 151
+      },
+      {
+        "method": "com.junkfood.seal.ui.page.videolist.VideoListPageKt.VideoListPage(Lcom/junkfood/seal/ui/page/videolist/VideoListViewModel; Lkotlin/jvm/functions/Function0; Landroidx/compose/runtime/Composer; I I)V",
+        "in_degree": 2,
+        "out_degree": 136,
+        "total_degree": 138
+      },
+      {
+        "method": "com.junkfood.seal.ui.page.download.DownloadSettingsDialogKt.DownloadSettingDialog(Z Z Z Lkotlin/jvm/functions/Function1; Lkotlin/jvm/functions/Function0; Lkotlin/jvm/functions/Function0; Landroidx/compose/runtime/Composer; I I)V",
+        "in_degree": 2,
+        "out_degree": 106,
+        "total_degree": 108
+      },
+      {
+        "method": "com.junkfood.seal.ui.page.downloadv2.configure.FormatPageKt.FormatPageImpl(Landroidx/compose/ui/Modifier; Lcom/junkfood/seal/util/VideoInfo; Z Z Z Ljava/util/Set; Lkotlin/jvm/functions/Function0; Lkotlin/jvm/functions/Function1; Landroidx/compose/runtime/Composer; I I)V",
+        "in_degree": 4,
+        "out_degree": 99,
+        "total_degree": 103
+      },
+      {
+        "method": "com.junkfood.seal.ui.page.settings.appearance.AppearancePreferencesKt$AppearancePreferences$2.invoke(Landroidx/compose/foundation/layout/PaddingValues; Landroidx/compose/runtime/Composer; I)V",
+        "in_degree": 1,
+        "out_degree": 99,
+        "total_degree": 100
+      },
+      {
+        "method": "com.junkfood.seal.ui.component.VideoListItemKt.MediaListItem(Landroidx/compose/ui/Modifier; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; J Lkotlin/jvm/functions/Function0; Lkotlin/jvm/functions/Function0; Lkotlin/jvm/functions/Function0; Lkotlin/jvm/functions/Function0; Lkotlin/jvm/functions/Function0; Lkotlin/jvm/functions/Function0; Landroidx/compose/runtime/Composer; I I I)V",
+        "in_degree": 3,
+        "out_degree": 96,
+        "total_degree": 99
+      },
+      {
+        "method": "com.junkfood.seal.ui.component.FormatItemKt.FormatItem-uPCbpMU(Landroidx/compose/ui/Modifier; Ljava/lang/String; Z Z Ljava/lang/String; Ljava/lang/String; Z J J Lkotlin/jvm/functions/Function0; Lkotlin/jvm/functions/Function0; Landroidx/compose/runtime/Composer; I I I)V",
+        "in_degree": 8,
+        "out_degree": 90,
+        "total_degree": 98
+      },
+      {
+        "method": "com.junkfood.seal.ui.page.downloadv2.configure.DownloadDialogV2Kt.ConfigurePage(Landroidx/compose/ui/Modifier; Ljava/lang/String; Lcom/junkfood/seal/ui/page/downloadv2/configure/Config; Lcom/junkfood/seal/util/DownloadUtil$DownloadPreferences; Lkotlin/jvm/functions/Function2; Lkotlin/jvm/functions/Function1; Lkotlin/jvm/functions/Function1; Lkotlin/jvm/functions/Function1; Landroidx/compose/runtime/Composer; I I)V",
+        "in_degree": 2,
+        "out_degree": 94,
+        "total_degree": 96
+      },
+      {
+        "method": "com.junkfood.seal.ui.component.FormatItemKt.FormatVideoPreview(Landroidx/compose/ui/Modifier; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; I Z Z Z Z Lkotlin/jvm/functions/Function0; Lkotlin/jvm/functions/Function0; Lkotlin/jvm/functions/Function0; Lkotlin/jvm/functions/Function0; Landroidx/compose/runtime/Composer; I I I)V",
+        "in_degree": 3,
+        "out_degree": 90,
+        "total_degree": 93
+      },
+      {
+        "method": "com.junkfood.seal.ui.page.downloadv2.ActionSheetKt.ActionSheetInfo(Landroidx/compose/ui/Modifier; Lcom/junkfood/seal/download/Task; Lcom/junkfood/seal/download/Task$ViewState; Landroidx/compose/runtime/Composer; I I)V",
+        "in_degree": 2,
+        "out_degree": 90,
+        "total_degree": 92
+      },
+      {
+        "method": "com.junkfood.seal.ui.component.DownloadQueueItemKt$CustomCommandTaskItem$6$1.invoke(Landroidx/compose/runtime/Composer; I)V",
+        "in_degree": 1,
+        "out_degree": 90,
+        "total_degree": 91
+      },
+      {
+        "method": "com.junkfood.seal.ui.page.AppEntryKt.AppEntry(Lcom/junkfood/seal/ui/page/downloadv2/configure/DownloadDialogViewModel; Landroidx/compose/runtime/Composer; I)V",
+        "in_degree": 2,
+        "out_degree": 88,
+        "total_degree": 90
+      },
+      {
+        "method": "com.junkfood.seal.util.DownloadUtil.downloadVideo-hUnOzRk(Lcom/junkfood/seal/util/VideoInfo; Ljava/lang/String; I Ljava/lang/String; Lcom/junkfood/seal/util/DownloadUtil$DownloadPreferences; Lkotlin/jvm/functions/Function3;)Ljava/lang/Object;",
+        "in_degree": 2,
+        "out_degree": 87,
+        "total_degree": 89
+      },
+      {
+        "method": "com.junkfood.seal.ui.component.ActionSheetItemsKt.ActionSheetPrimaryButton-dH6d5Fo(Landroidx/compose/ui/Modifier; J J J Landroidx/compose/ui/graphics/vector/ImageVector; Ljava/lang/String; Lkotlin/jvm/functions/Function0; Landroidx/compose/runtime/Composer; I I)V",
+        "in_degree": 11,
+        "out_degree": 77,
+        "total_degree": 88
+      },
+      {
+        "method": "com.junkfood.seal.ui.page.download.VideoSectionSliderKt.VideoSelectionSlider(Landroidx/compose/ui/Modifier; Landroidx/compose/material3/RangeSliderState; Lkotlin/jvm/functions/Function0; Lkotlin/jvm/functions/Function0; Landroidx/compose/runtime/Composer; I I)V",
+        "in_degree": 3,
+        "out_degree": 82,
+        "total_degree": 85
+      },
+      {
+        "method": "com.junkfood.seal.ui.page.downloadv2.configure.InputUrlDialogKt.InputUrlPageImpl(Landroidx/compose/ui/Modifier; Ljava/util/List; Ljava/util/List; Lkotlin/jvm/functions/Function1; Lkotlin/jvm/functions/Function1; Lkotlin/jvm/functions/Function1; Landroidx/compose/runtime/Composer; I I)V",
+        "in_degree": 3,
+        "out_degree": 82,
+        "total_degree": 85
+      },
+      {
+        "method": "com.junkfood.seal.ui.page.downloadv2.configure.PlaylistSelectionPageKt.PlaylistSelectionPage(Lcom/junkfood/seal/ui/page/downloadv2/configure/DownloadDialogViewModel$SelectionState$PlaylistSelection; Lcom/junkfood/seal/download/DownloaderV2; Lkotlin/jvm/functions/Function0; Landroidx/compose/runtime/Composer; I I)V",
+        "in_degree": 3,
+        "out_degree": 81,
+        "total_degree": 84
+      },
+      {
+        "method": "com.junkfood.seal.ui.page.downloadv2.configure.DownloadDialogV2Kt.ErrorPage(Landroidx/compose/ui/Modifier; Lcom/junkfood/seal/ui/page/downloadv2/configure/DownloadDialogViewModel$SheetState$Error; Lkotlin/jvm/functions/Function1; Landroidx/compose/runtime/Composer; I I)V",
+        "in_degree": 2,
+        "out_degree": 82,
+        "total_degree": 84
+      },
+      {
+        "method": "com.junkfood.seal.ui.page.settings.directory.DownloadDirectoryPreferencesKt.DownloadDirectoryPreferences(Lkotlin/jvm/functions/Function0; Landroidx/compose/runtime/Composer; I)V",
+        "in_degree": 3,
+        "out_degree": 80,
+        "total_degree": 83
+      },
+      {
+        "method": "com.junkfood.seal.ui.page.downloadv2.DownloadPageV2Kt.SubHeader-oC9nPe0(Landroidx/compose/ui/Modifier; J I I Z Lkotlin/jvm/functions/Function0; Lkotlin/jvm/functions/Function0; Landroidx/compose/runtime/Composer; I I)V",
+        "in_degree": 2,
+        "out_degree": 79,
+        "total_degree": 81
+      }
+    ],
+    "top_external_api_packages": [
+      {
+        "name": "androidx.compose.runtime",
+        "count": 19434
+      },
+      {
+        "name": "java.lang",
+        "count": 6724
+      },
+      {
+        "name": "androidx.compose.ui",
+        "count": 3086
+      },
+      {
+        "name": "kotlin.jvm",
+        "count": 2196
+      },
+      {
+        "name": "androidx.compose.material3",
+        "count": 1890
+      },
+      {
+        "name": "androidx.compose.foundation",
+        "count": 1834
+      },
+      {
+        "name": "java.util",
+        "count": 612
+      },
+      {
+        "name": "kotlin.coroutines",
+        "count": 387
+      },
+      {
+        "name": "androidx.compose.material",
+        "count": 373
+      },
+      {
+        "name": "kotlinx.serialization.encoding",
+        "count": 357
+      },
+      {
+        "name": "kotlin.ResultKt",
+        "count": 210
+      },
+      {
+        "name": "kotlin.collections",
+        "count": 197
+      },
+      {
+        "name": "androidx.compose.animation",
+        "count": 175
+      },
+      {
+        "name": "kotlinx.serialization.internal",
+        "count": 159
+      },
+      {
+        "name": "kotlinx.coroutines.flow",
+        "count": 140
+      },
+      {
+        "name": "kotlinx.coroutines.BuildersKt",
+        "count": 111
+      },
+      {
+        "name": "android.content.Context",
+        "count": 96
+      },
+      {
+        "name": "kotlin.Result",
+        "count": 95
+      },
+      {
+        "name": "android.content.Intent",
+        "count": 63
+      },
+      {
+        "name": "kotlin.text",
+        "count": 58
+      }
+    ],
+    "top_internal_package_dependencies": [
+      {
+        "name": "com.junkfood.seal.ui.page -> com.junkfood.seal.ui.component",
+        "count": 389
+      },
+      {
+        "name": "com.junkfood.seal.ui.page -> com.junkfood.seal.util.PreferenceUtil",
+        "count": 191
+      },
+      {
+        "name": "com.junkfood.seal.util.DownloadUtil -> com.junkfood.seal.util.DownloadUtil$DownloadPreferences",
+        "count": 89
+      },
+      {
+        "name": "com.junkfood.seal.ui.page -> com.junkfood.seal.database.objects",
+        "count": 84
+      },
+      {
+        "name": "com.junkfood.seal.ui.page -> com.junkfood.seal.ui.common",
+        "count": 73
+      },
+      {
+        "name": "com.junkfood.seal.ui.page -> com.junkfood.seal.util.PreferenceStrings",
+        "count": 32
+      },
+      {
+        "name": "com.junkfood.seal.ui.page -> com.junkfood.seal.ui.theme",
+        "count": 31
+      },
+      {
+        "name": "com.junkfood.seal.ui.component -> com.junkfood.seal.ui.theme",
+        "count": 31
+      },
+      {
+        "name": "com.junkfood.seal.ui.page -> com.junkfood.seal.util.DownloadUtil$DownloadPreferences",
+        "count": 30
+      },
+      {
+        "name": "com.junkfood.seal.ui.page -> com.junkfood.seal.util.VideoInfo",
+        "count": 27
+      },
+      {
+        "name": "com.junkfood.seal.ui.page -> com.junkfood.seal.download.Task$ViewState",
+        "count": 26
+      },
+      {
+        "name": "com.junkfood.seal.ui.page -> com.junkfood.seal.util.TextUtilKt",
+        "count": 25
+      },
+      {
+        "name": "com.junkfood.seal.ui.page -> com.junkfood.seal.Downloader",
+        "count": 24
+      },
+      {
+        "name": "com.junkfood.seal.util.DatabaseUtil -> com.junkfood.seal.database.VideoInfoDao",
+        "count": 23
+      },
+      {
+        "name": "com.junkfood.seal.ui.page -> com.junkfood.seal.util.DatabaseUtil",
+        "count": 20
+      },
+      {
+        "name": "com.junkfood.seal.util.DownloadUtil -> com.junkfood.seal.util.VideoInfo",
+        "count": 19
+      },
+      {
+        "name": "com.junkfood.seal.ui.page -> com.junkfood.seal.App$Companion",
+        "count": 18
+      },
+      {
+        "name": "com.junkfood.seal.ui.page -> com.junkfood.seal.util.FileUtil",
+        "count": 18
+      },
+      {
+        "name": "com.junkfood.seal.ui.page -> com.junkfood.seal.Downloader$CustomCommandTask",
+        "count": 18
+      },
+      {
+        "name": "com.junkfood.seal.ui.page -> com.junkfood.seal.util.ToastUtil",
+        "count": 17
+      }
+    ],
+    "edge_samples": [
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-1$1.<clinit>()V",
+        "to": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-1$1.<init>()V"
+      },
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-1$1.<init>()V",
+        "to": "java.lang.Object.<init>()V"
+      },
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-1$1.invoke(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;",
+        "to": "java.lang.Number.intValue()I"
+      },
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-1$1.invoke(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;",
+        "to": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-1$1.invoke(Landroidx/compose/runtime/Composer; I)V"
+      },
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-1$1.invoke(Landroidx/compose/runtime/Composer; I)V",
+        "to": "androidx.compose.material3.TextKt.Text--4IGK_g(Ljava/lang/String; Landroidx/compose/ui/Modifier; J J Landroidx/compose/ui/text/font/FontStyle; Landroidx/compose/ui/text/font/FontWeight; Landroidx/compose/ui/text/font/FontFamily; J Landroidx/compose/ui/text/style/TextDecoration; Landroidx/compose/ui/text/style/TextAlign; J I Z I I Lkotlin/jvm/functions/Function1; Landroidx/compose/ui/text/TextStyle; Landroidx/compose/runtime/Composer; I I I)V"
+      },
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-1$1.invoke(Landroidx/compose/runtime/Composer; I)V",
+        "to": "androidx.compose.runtime.ComposerKt.traceEventEnd()V"
+      },
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-1$1.invoke(Landroidx/compose/runtime/Composer; I)V",
+        "to": "androidx.compose.runtime.ComposerKt.sourceInformation(Landroidx/compose/runtime/Composer; Ljava/lang/String;)V"
+      },
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-1$1.invoke(Landroidx/compose/runtime/Composer; I)V",
+        "to": "androidx.compose.runtime.ComposerKt.isTraceInProgress()Z"
+      },
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-1$1.invoke(Landroidx/compose/runtime/Composer; I)V",
+        "to": "androidx.compose.ui.res.StringResources_androidKt.stringResource(I Landroidx/compose/runtime/Composer; I)Ljava/lang/String;"
+      },
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-1$1.invoke(Landroidx/compose/runtime/Composer; I)V",
+        "to": "androidx.compose.runtime.ComposerKt.traceEventStart(I I I Ljava/lang/String;)V"
+      },
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-1$1.invoke(Landroidx/compose/runtime/Composer; I)V",
+        "to": "androidx.compose.runtime.Composer.skipToGroupEnd()V"
+      },
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-1$1.invoke(Landroidx/compose/runtime/Composer; I)V",
+        "to": "androidx.compose.runtime.Composer.getSkipping()Z"
+      },
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-10$1.<clinit>()V",
+        "to": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-10$1.<init>()V"
+      },
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-10$1.<init>()V",
+        "to": "java.lang.Object.<init>()V"
+      },
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-10$1.invoke(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;",
+        "to": "java.lang.Number.intValue()I"
+      },
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-10$1.invoke(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;",
+        "to": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-10$1.invoke(Landroidx/compose/runtime/Composer; I)V"
+      },
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-10$1.invoke(Landroidx/compose/runtime/Composer; I)V",
+        "to": "androidx.compose.material3.IconKt.Icon-ww6aTOc(Landroidx/compose/ui/graphics/vector/ImageVector; Ljava/lang/String; Landroidx/compose/ui/Modifier; J Landroidx/compose/runtime/Composer; I I)V"
+      },
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-10$1.invoke(Landroidx/compose/runtime/Composer; I)V",
+        "to": "androidx.compose.runtime.Composer.skipToGroupEnd()V"
+      },
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-10$1.invoke(Landroidx/compose/runtime/Composer; I)V",
+        "to": "androidx.compose.runtime.Composer.getSkipping()Z"
+      },
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-10$1.invoke(Landroidx/compose/runtime/Composer; I)V",
+        "to": "androidx.compose.runtime.ComposerKt.isTraceInProgress()Z"
+      },
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-10$1.invoke(Landroidx/compose/runtime/Composer; I)V",
+        "to": "androidx.compose.runtime.ComposerKt.traceEventStart(I I I Ljava/lang/String;)V"
+      },
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-10$1.invoke(Landroidx/compose/runtime/Composer; I)V",
+        "to": "androidx.compose.runtime.ComposerKt.traceEventEnd()V"
+      },
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-10$1.invoke(Landroidx/compose/runtime/Composer; I)V",
+        "to": "androidx.compose.material.icons.outlined.SpatialAudioOffKt.getSpatialAudioOff(Landroidx/compose/material/icons/Icons$Outlined;)Landroidx/compose/ui/graphics/vector/ImageVector;"
+      },
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-10$1.invoke(Landroidx/compose/runtime/Composer; I)V",
+        "to": "androidx.compose.runtime.ComposerKt.sourceInformation(Landroidx/compose/runtime/Composer; Ljava/lang/String;)V"
+      },
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-11$1.<clinit>()V",
+        "to": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-11$1.<init>()V"
+      },
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-11$1.<init>()V",
+        "to": "java.lang.Object.<init>()V"
+      },
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-11$1.invoke(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;",
+        "to": "java.lang.Number.intValue()I"
+      },
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-11$1.invoke(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;",
+        "to": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-11$1.invoke(Landroidx/compose/runtime/Composer; I)V"
+      },
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-11$1.invoke(Landroidx/compose/runtime/Composer; I)V",
+        "to": "androidx.compose.runtime.ComposerKt.isTraceInProgress()Z"
+      },
+      {
+        "from": "com.junkfood.seal.ui.page.settings.format.ComposableSingletons$DownloadFormatPreferencesKt$lambda-11$1.invoke(Landroidx/compose/runtime/Composer; I)V",
+        "to": "androidx.compose.runtime.ComposerKt.sourceInformation(Landroidx/compose/runtime/Composer; Ljava/lang/String;)V"
+      }
+    ]
+  },
+  "signatures": {
+    "is_signed_v1": false,
+    "is_signed_v2": true,
+    "is_signed_v3": true,
+    "signature_names": []
+  }
+}
