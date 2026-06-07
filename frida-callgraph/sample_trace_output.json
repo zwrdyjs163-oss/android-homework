@@ -1,0 +1,7 @@
+{"type":"meta","time":"2026-06-07T00:00:00.000Z","message":"sample trace","classCount":3}
+{"type":"enter","thread":"main","className":"com.junkfood.seal.MainActivity","methodName":"onCreate","signature":"com.junkfood.seal.MainActivity.onCreate(android.os.Bundle)","args":["null"]}
+{"type":"enter","thread":"main","className":"com.junkfood.seal.ui.page.download.DownloadPageKt","methodName":"DownloadPage","signature":"com.junkfood.seal.ui.page.download.DownloadPageKt.DownloadPage(...)","args":[]}
+{"type":"exit","className":"com.junkfood.seal.ui.page.download.DownloadPageKt","methodName":"DownloadPage","signature":"com.junkfood.seal.ui.page.download.DownloadPageKt.DownloadPage(...)","result":"undefined"}
+{"type":"enter","thread":"main","className":"com.junkfood.seal.DownloadService","methodName":"onStartCommand","signature":"com.junkfood.seal.DownloadService.onStartCommand(android.content.Intent,int,int)","args":["Intent","0","1"]}
+{"type":"exit","className":"com.junkfood.seal.DownloadService","methodName":"onStartCommand","signature":"com.junkfood.seal.DownloadService.onStartCommand(android.content.Intent,int,int)","result":"1"}
+{"type":"exit","className":"com.junkfood.seal.MainActivity","methodName":"onCreate","signature":"com.junkfood.seal.MainActivity.onCreate(android.os.Bundle)","result":"undefined"}

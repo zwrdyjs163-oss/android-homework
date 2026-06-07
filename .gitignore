@@ -31,3 +31,10 @@ appium-practice-screenshot.png
 appium_pdf_notes.txt
 tools/
 bundletool-output/
+.frida-tools-python/
+frida-callgraph/frida-server*
+frida-callgraph/*.xz
+frida-callgraph/trace_output.json
+frida-callgraph/callgraph.dot
+frida-callgraph/callgraph.html
+frida-callgraph/callgraph-summary.md
