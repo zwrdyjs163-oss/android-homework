@@ -24,6 +24,15 @@ print(target)
 
 & $Adb push $serverPath /data/local/tmp/frida-server
 & $Adb shell chmod 755 /data/local/tmp/frida-server
-& $Adb shell su -c "/data/local/tmp/frida-server >/dev/null 2>&1 &"
+
+& $Adb root | Out-Host
+Start-Sleep -Seconds 2
+
+$deviceId = (& $Adb shell id) -join "`n"
+if ($deviceId -match "uid=0") {
+    & $Adb shell "/data/local/tmp/frida-server >/data/local/tmp/frida.log 2>&1 &"
+} else {
+    & $Adb shell su -c "/data/local/tmp/frida-server >/data/local/tmp/frida.log 2>&1 &"
+}
 
 Write-Host "frida-server pushed and started."

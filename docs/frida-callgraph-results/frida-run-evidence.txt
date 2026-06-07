@@ -1,0 +1,53 @@
+Frida Server dynamic analysis evidence
+=====================================
+
+Date: 2026-06-07
+Project: Seal
+Package: com.junkfood.seal.debug
+
+Emulator
+--------
+AVD: Pixel_8
+Android: 14
+SDK: 34
+ABI: x86_64
+Root check: uid=0(root)
+
+Frida
+-----
+frida-tools: 17.10.0
+frida-server: frida-server-17.10.0-android-x86_64
+frida-server device path: /data/local/tmp/frida-server
+frida-server process: running as root
+
+App run
+-------
+Installed APK: bundletool-output/Seal-from-aab-universal-debug.apk
+Launch command: adb shell am start -n com.junkfood.seal.debug/com.junkfood.seal.MainActivity
+Confirmed latest PID after relaunch: 4297
+
+Trace generation
+----------------
+Hook script: frida-callgraph/hook.js
+Trace file: frida-callgraph/trace_output.json
+Trace size: 169561 bytes
+
+Call graph generation
+---------------------
+Command: python frida-callgraph/generate_callgraph.py frida-callgraph/trace_output.json
+Trace events: 665
+Method nodes: 94
+Call edges: 104
+Exception methods: 0
+
+Generated local outputs
+-----------------------
+frida-callgraph/callgraph.dot
+frida-callgraph/callgraph.html
+frida-callgraph/callgraph-summary.md
+
+Committed report outputs
+------------------------
+docs/frida-callgraph-results/callgraph-summary.md
+docs/frida-callgraph-results/callgraph.html
+docs/frida-callgraph-results/frida-run-evidence.txt

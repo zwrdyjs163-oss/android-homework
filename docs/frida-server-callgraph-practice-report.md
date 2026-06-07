@@ -1,26 +1,27 @@
-# Frida Server 动态调用关系实践说明
+# Frida Server 动态调用关系实践报告
 
 ## 一、实践目标
 
-本次实践基于 Frida Server 对 Seal 应用进行动态插桩，记录应用实际运行过程中的方法调用，并使用脚本将 trace 日志转换为调用关系摘要和调用图。
+本次实践使用 Frida Server 对 Seal Android 应用进行动态插桩，在模拟器中运行应用并记录实际发生的方法调用，再使用脚本生成调用关系摘要和调用图。
 
 该实践与 Androguard 静态分析形成互补：
 
-- Androguard：不运行应用，分析 APK 内声明的类、组件、权限和静态调用结构。
-- Frida：运行应用，在真实操作过程中记录实际发生的方法调用。
+- Androguard：不运行应用，分析 APK 中声明的类、组件、权限、调用关系和依赖结构。
+- Frida：运行应用，在真实页面启动和操作过程中记录运行时方法调用。
 
-## 二、当前完成情况
+## 二、环境与版本
 
-| 项目 | 状态 |
+| 项目 | 结果 |
 | --- | --- |
-| Python frida 包 | 已安装，版本 `17.10.0` |
+| 模拟器 | Pixel 8 |
+| Android 版本 | Android 14 |
+| API | 34 |
+| ABI | x86_64 |
+| root 权限 | 已确认可用 |
+| Frida Python 包 | 17.10.0 |
 | frida-tools | 已安装到项目本地 `.frida-tools-python` |
-| frida 命令包装脚本 | 已完成 |
-| frida-server x86_64 | 已下载到本地，未提交进仓库 |
-| hook.js | 已完成 |
-| trace 转调用图脚本 | 已完成 |
-| 样例 trace 验证 | 已完成 |
-| 真模拟器运行 | 待 Pixel 8 / API 34 / Google APIs root 模拟器启动后执行 |
+| frida-server | `frida-server-17.10.0-android-x86_64` |
+| 被测应用 | `com.junkfood.seal.debug` |
 
 Frida 版本验证：
 
@@ -38,36 +39,29 @@ Frida 版本验证：
 
 | 文件 | 作用 |
 | --- | --- |
-| `frida-callgraph/README.md` | 完整操作步骤 |
-| `frida-callgraph/hook.js` | Frida Hook 脚本，用于记录方法进入/退出 |
-| `frida-callgraph/generate_callgraph.py` | 将 trace 日志转换为调用图和摘要 |
-| `frida-callgraph/run_frida.ps1` | Windows 下运行 Frida 的包装脚本 |
+| `frida-callgraph/README.md` | Frida Server 实践步骤说明 |
+| `frida-callgraph/hook.js` | Frida Hook 脚本，用于记录 Seal 包内方法调用 |
+| `frida-callgraph/generate_callgraph.py` | 将 Frida trace 日志转换为调用图和统计摘要 |
+| `frida-callgraph/run_frida.ps1` | Windows 下运行本地 Frida 的包装脚本 |
 | `frida-callgraph/setup_frida_server.ps1` | 解压、推送并启动 frida-server |
 | `frida-callgraph/sample_trace_output.json` | 用于验证调用图脚本的样例 trace |
+| `docs/frida-callgraph-results/callgraph-summary.md` | 本次真机模拟器运行生成的调用关系摘要 |
+| `docs/frida-callgraph-results/callgraph.html` | 本次真机模拟器运行生成的 HTML 调用图结果 |
+| `docs/frida-callgraph-results/frida-run-evidence.txt` | 本次运行过程和关键输出记录 |
 
-## 四、模拟器要求
+## 四、操作流程
 
-建议使用：
-
-```text
-Pixel 8
-API 34
-Google APIs
-x86_64
-```
-
-原因：
-
-1. Google APIs 镜像可以使用 root，更适合启动 frida-server。
-2. API 34 对当前项目更稳定。
-3. 更高版本可能遇到 16K page size 兼容问题。
-
-## 五、操作流程
-
-启动模拟器后，确认设备在线：
+启动 Pixel 8 / API 34 模拟器后，确认设备在线：
 
 ```powershell
 F:\AS_SDK\platform-tools\adb.exe devices -l
+```
+
+确认 root 权限可用：
+
+```powershell
+F:\AS_SDK\platform-tools\adb.exe root
+F:\AS_SDK\platform-tools\adb.exe shell id
 ```
 
 推送并启动 frida-server：
@@ -82,6 +76,12 @@ F:\AS_SDK\platform-tools\adb.exe devices -l
 F:\AS_SDK\platform-tools\adb.exe install -r -d .\bundletool-output\Seal-from-aab-universal-debug.apk
 ```
 
+启动应用：
+
+```powershell
+F:\AS_SDK\platform-tools\adb.exe shell am start -n com.junkfood.seal.debug/com.junkfood.seal.MainActivity
+```
+
 查看应用 PID：
 
 ```powershell
@@ -94,41 +94,45 @@ F:\AS_SDK\platform-tools\adb.exe shell pidof com.junkfood.seal.debug
 .\frida-callgraph\run_frida.ps1 -U -p <PID> -l .\frida-callgraph\hook.js -o .\frida-callgraph\trace_output.json
 ```
 
-在模拟器中操作应用，例如进入主页、输入链接、点击下载。操作结束后按 `Ctrl+C` 停止 Frida。
-
-生成调用图：
+操作应用页面后，停止 Frida，并生成调用图：
 
 ```powershell
 python .\frida-callgraph\generate_callgraph.py .\frida-callgraph\trace_output.json
 ```
 
+## 五、实测结果
+
+本次已在 Pixel 8 / API 34 / x86_64 模拟器上完成实测。Frida 成功附加到 Seal 应用进程，并记录到应用运行时调用事件。
+
 生成结果：
 
-| 文件 | 说明 |
-| --- | --- |
-| `frida-callgraph/callgraph.dot` | Graphviz 调用图 |
-| `frida-callgraph/callgraph.html` | HTML 调用图摘要 |
-| `frida-callgraph/callgraph-summary.md` | Markdown 调用统计 |
+| 指标 | 数量 |
+| --- | ---: |
+| trace 事件数量 | 665 |
+| 方法节点数量 | 94 |
+| 调用边数量 | 104 |
+| 异常事件方法数量 | 0 |
 
-## 六、样例验证结果
+高频方法示例：
 
-已使用 `sample_trace_output.json` 验证调用图脚本：
+| 方法 | 次数 |
+| --- | ---: |
+| `util.PreferenceUtil.getBoolean(Ljava/lang/String;,Z)` | 31 |
+| `ui.common.CompositionLocalsKt.getLocalFixedColorRoles()` | 14 |
+| `util.PreferenceUtil.getString(Ljava/lang/String;,Ljava/lang/String;)` | 8 |
+| `util.PreferenceUtil.getInt(Ljava/lang/String;,I)` | 7 |
+| `ui.page.settings.directory.DownloadDirectoryPreferencesKt.isValidDirectory(Ljava/lang/String;)` | 6 |
 
-```text
-events=7 methods=3 edges=3
-```
+高频调用关系示例：
 
-说明 `generate_callgraph.py` 可以正常解析 Frida trace，并生成调用图相关文件。
+| 调用方 | 被调用方 | 次数 |
+| --- | --- | ---: |
+| `ui.page.downloadv2.DownloadPageV2Kt.DownloadPageV2(...)` | `util.PreferenceUtil.getBoolean(Ljava/lang/String;,Z)` | 31 |
+| `ui.page.downloadv2.DownloadPageV2Kt$DownloadPageImplV2$5$3$1$1$2.invoke(...)` | `ui.common.CompositionLocalsKt.getLocalFixedColorRoles()` | 12 |
+| `ui.page.settings.directory.DownloadDirectoryPreferencesKt.DownloadDirectoryPreferences(...)` | `ui.page.settings.directory.DownloadDirectoryPreferencesKt.isValidDirectory(Ljava/lang/String;)` | 6 |
 
-## 七、提交说明
+## 六、结论
 
-仓库中提交脚本和说明文件，不提交以下运行产物：
+通过本次 Frida Server 动态插桩，可以看到 Seal 应用在页面启动和设置页面相关操作中，会频繁读取偏好配置、Compose 主题状态、下载目录配置等逻辑。相比 Androguard 的静态调用关系，Frida 结果更能反映实际运行路径和用户操作触发的调用情况。
 
-- `frida-server`
-- `frida-server-*.xz`
-- `trace_output.json`
-- `callgraph.dot`
-- `callgraph.html`
-- `callgraph-summary.md`
-
-这些文件会根据实际模拟器运行结果重新生成。
+仓库中不提交 `frida-server` 二进制、压缩包和原始 trace 日志，只提交脚本、说明文档和本次运行摘要，避免仓库体积过大。
