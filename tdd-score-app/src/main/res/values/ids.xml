@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="studentNameInput" type="id" />
+    <item name="objectiveScoreInput" type="id" />
+    <item name="blankScoreInput" type="id" />
+    <item name="essayScoreInput" type="id" />
+    <item name="saveScoreButton" type="id" />
+    <item name="scoreResultText" type="id" />
+    <item name="scoreHistoryText" type="id" />
+</resources>
