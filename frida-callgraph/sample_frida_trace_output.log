@@ -1,0 +1,13 @@
+Started tracing 8 functions. Press Ctrl+C to stop.
+           /* TID 0x1a2b */
+  124 ms  com.junkfood.seal.ui.page.downloadv2.DownloadPageV2Kt.DownloadPageV2()
+  126 ms    com.junkfood.seal.util.PreferenceUtil.getBoolean()
+  127 ms    com.junkfood.seal.util.PreferenceUtil.getString()
+  128 ms    com.junkfood.seal.util.PreferenceUtil.getInt()
+  140 ms  com.junkfood.seal.ui.page.AppEntryKt.AppEntry()
+  142 ms    com.junkfood.seal.ui.page.NavigationDrawerKt.NavigationDrawer()
+  145 ms      com.junkfood.seal.ui.common.CompositionLocalsKt.getLocalWindowWidthState()
+           /* TID 0x1a2b */
+  220 ms  com.junkfood.seal.ui.page.settings.directory.DownloadDirectoryPreferencesKt.DownloadDirectoryPreferences()
+  222 ms    com.junkfood.seal.ui.page.settings.directory.DownloadDirectoryPreferencesKt.isValidDirectory()
+  225 ms    com.junkfood.seal.util.PreferenceUtil.getString()

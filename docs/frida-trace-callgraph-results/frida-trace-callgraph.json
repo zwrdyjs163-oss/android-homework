@@ -1,0 +1,98 @@
+{
+  "source_type": "frida-trace",
+  "event_count": 10,
+  "method_count": 9,
+  "edge_count": 10,
+  "exception_method_count": 0,
+  "methods": [
+    {
+      "method": "util.PreferenceUtil.getString()",
+      "count": 2
+    },
+    {
+      "method": "ui.page.downloadv2.DownloadPageV2Kt.DownloadPageV2()",
+      "count": 1
+    },
+    {
+      "method": "util.PreferenceUtil.getBoolean()",
+      "count": 1
+    },
+    {
+      "method": "util.PreferenceUtil.getInt()",
+      "count": 1
+    },
+    {
+      "method": "ui.page.AppEntryKt.AppEntry()",
+      "count": 1
+    },
+    {
+      "method": "ui.page.NavigationDrawerKt.NavigationDrawer()",
+      "count": 1
+    },
+    {
+      "method": "ui.common.CompositionLocalsKt.getLocalWindowWidthState()",
+      "count": 1
+    },
+    {
+      "method": "ui.page.settings.directory.DownloadDirectoryPreferencesKt.DownloadDirectoryPreferences()",
+      "count": 1
+    },
+    {
+      "method": "ui.page.settings.directory.DownloadDirectoryPreferencesKt.isValidDirectory()",
+      "count": 1
+    }
+  ],
+  "edges": [
+    {
+      "source": "<entry>",
+      "target": "ui.page.downloadv2.DownloadPageV2Kt.DownloadPageV2()",
+      "count": 1
+    },
+    {
+      "source": "ui.page.downloadv2.DownloadPageV2Kt.DownloadPageV2()",
+      "target": "util.PreferenceUtil.getBoolean()",
+      "count": 1
+    },
+    {
+      "source": "ui.page.downloadv2.DownloadPageV2Kt.DownloadPageV2()",
+      "target": "util.PreferenceUtil.getString()",
+      "count": 1
+    },
+    {
+      "source": "ui.page.downloadv2.DownloadPageV2Kt.DownloadPageV2()",
+      "target": "util.PreferenceUtil.getInt()",
+      "count": 1
+    },
+    {
+      "source": "<entry>",
+      "target": "ui.page.AppEntryKt.AppEntry()",
+      "count": 1
+    },
+    {
+      "source": "ui.page.AppEntryKt.AppEntry()",
+      "target": "ui.page.NavigationDrawerKt.NavigationDrawer()",
+      "count": 1
+    },
+    {
+      "source": "ui.page.NavigationDrawerKt.NavigationDrawer()",
+      "target": "ui.common.CompositionLocalsKt.getLocalWindowWidthState()",
+      "count": 1
+    },
+    {
+      "source": "<entry>",
+      "target": "ui.page.settings.directory.DownloadDirectoryPreferencesKt.DownloadDirectoryPreferences()",
+      "count": 1
+    },
+    {
+      "source": "ui.page.settings.directory.DownloadDirectoryPreferencesKt.DownloadDirectoryPreferences()",
+      "target": "ui.page.settings.directory.DownloadDirectoryPreferencesKt.isValidDirectory()",
+      "count": 1
+    },
+    {
+      "source": "ui.page.settings.directory.DownloadDirectoryPreferencesKt.DownloadDirectoryPreferences()",
+      "target": "util.PreferenceUtil.getString()",
+      "count": 1
+    }
+  ],
+  "exceptions": []
+}

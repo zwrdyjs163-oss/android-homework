@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>frida-trace 方法调用图</title>
+  <style>
+    body { margin: 0; font-family: Arial, "Microsoft YaHei", sans-serif; color: #172033; background: #f7f8fb; }
+    header { padding: 22px 28px; background: #172033; color: #fff; }
+    h1 { margin: 0 0 8px; font-size: 24px; }
+    main { padding: 22px 28px 40px; }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 0 0 18px; }
+    .stat { background: #fff; border: 1px solid #d9dee8; border-radius: 8px; padding: 12px; }
+    .stat strong { display: block; font-size: 22px; margin-top: 5px; }
+    .panel { background: #fff; border: 1px solid #d9dee8; border-radius: 8px; margin-top: 16px; overflow: hidden; }
+    .panel h2 { font-size: 18px; margin: 0; padding: 14px 16px; border-bottom: 1px solid #e6e9f0; }
+    .graph-wrap { overflow: auto; padding: 12px; }
+    svg { background: #fcfdff; border: 1px solid #e6e9f0; border-radius: 6px; }
+    .method-node rect { fill: #e8f2ff; stroke: #4d82c4; }
+    .entry-node rect { fill: #fff4d8; stroke: #c28a12; }
+    text { font-size: 11px; fill: #172033; }
+    .edge-label { font-size: 10px; fill: #374151; paint-order: stroke; stroke: #fff; stroke-width: 3px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border-top: 1px solid #e6e9f0; padding: 8px 10px; text-align: left; font-size: 13px; vertical-align: top; }
+    th { background: #f1f4f8; }
+    code { white-space: normal; word-break: break-all; }
+    input { width: calc(100% - 32px); margin: 12px 16px; padding: 9px 10px; border: 1px solid #cfd6e3; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>frida-trace 方法调用图</h1>
+    <div>来源：frida-trace 日志，结果可直接用浏览器打开。</div>
+  </header>
+  <main>
+    <section class="stats">
+      <div class="stat">日志事件<strong>10</strong></div>
+      <div class="stat">方法节点<strong>9</strong></div>
+      <div class="stat">调用边<strong>10</strong></div>
+      <div class="stat">异常方法<strong>0</strong></div>
+    </section>
+    <section class="panel">
+      <h2>调用图</h2>
+      <div class="graph-wrap">
+        <svg width="1040" height="520" role="img" aria-label="frida-trace call graph">
+          <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L0,6 L9,3 z" fill="#6b7280"></path>
+            </marker>
+          </defs>
+          <line x1="220" y1="68.0" x2="290" y2="214.66666666666666" stroke="#6b7280" stroke-width="1.89" marker-end="url(#arrow)" /><text x="255.0" y="141.3" class="edge-label">1</text><line x1="470" y1="214.66666666666666" x2="540" y2="332.0" stroke="#6b7280" stroke-width="1.89" marker-end="url(#arrow)" /><text x="505.0" y="273.3" class="edge-label">1</text><line x1="470" y1="214.66666666666666" x2="540" y2="68.0" stroke="#6b7280" stroke-width="1.89" marker-end="url(#arrow)" /><text x="505.0" y="141.3" class="edge-label">1</text><line x1="470" y1="214.66666666666666" x2="540" y2="420.0" stroke="#6b7280" stroke-width="1.89" marker-end="url(#arrow)" /><text x="505.0" y="317.3" class="edge-label">1</text><line x1="220" y1="68.0" x2="290" y2="68.0" stroke="#6b7280" stroke-width="1.89" marker-end="url(#arrow)" /><text x="255.0" y="68.0" class="edge-label">1</text><line x1="470" y1="68.0" x2="540" y2="156.0" stroke="#6b7280" stroke-width="1.89" marker-end="url(#arrow)" /><text x="505.0" y="112.0" class="edge-label">1</text><line x1="720" y1="156.0" x2="790" y2="68.0" stroke="#6b7280" stroke-width="1.89" marker-end="url(#arrow)" /><text x="755.0" y="112.0" class="edge-label">1</text><line x1="220" y1="68.0" x2="290" y2="361.3333333333333" stroke="#6b7280" stroke-width="1.89" marker-end="url(#arrow)" /><text x="255.0" y="214.7" class="edge-label">1</text><line x1="470" y1="361.3333333333333" x2="540" y2="244.0" stroke="#6b7280" stroke-width="1.89" marker-end="url(#arrow)" /><text x="505.0" y="302.7" class="edge-label">1</text><line x1="470" y1="361.3333333333333" x2="540" y2="68.0" stroke="#6b7280" stroke-width="1.89" marker-end="url(#arrow)" /><text x="505.0" y="214.7" class="edge-label">1</text>
+          <g class="method-node"><rect x="540" y="50.0" width="180" height="38" rx="6"></rect><title>util.PreferenceUtil.getString() calls=2</title><text x="548" y="73.0">util.PreferenceUtil.getString()</text></g><g class="method-node"><rect x="540" y="138.0" width="180" height="38" rx="6"></rect><title>ui.page.NavigationDrawerKt.NavigationDrawer() calls=1</title><text x="548" y="161.0">ui.page.NavigationDrawerKt.NavigationDr...</text></g><g class="method-node"><rect x="540" y="226.0" width="180" height="38" rx="6"></rect><title>ui.page.settings.directory.DownloadDirectoryPreferencesKt.isValidDirectory() calls=1</title><text x="548" y="249.0">ui.page.settings.directory.DownloadDire...</text></g><g class="method-node"><rect x="540" y="314.0" width="180" height="38" rx="6"></rect><title>util.PreferenceUtil.getBoolean() calls=1</title><text x="548" y="337.0">util.PreferenceUtil.getBoolean()</text></g><g class="method-node"><rect x="540" y="402.0" width="180" height="38" rx="6"></rect><title>util.PreferenceUtil.getInt() calls=1</title><text x="548" y="425.0">util.PreferenceUtil.getInt()</text></g><g class="method-node"><rect x="290" y="50.0" width="180" height="38" rx="6"></rect><title>ui.page.AppEntryKt.AppEntry() calls=1</title><text x="298" y="73.0">ui.page.AppEntryKt.AppEntry()</text></g><g class="method-node"><rect x="290" y="196.66666666666666" width="180" height="38" rx="6"></rect><title>ui.page.downloadv2.DownloadPageV2Kt.DownloadPageV2() calls=1</title><text x="298" y="219.66666666666666">ui.page.downloadv2.DownloadPageV2Kt.Dow...</text></g><g class="method-node"><rect x="290" y="343.3333333333333" width="180" height="38" rx="6"></rect><title>ui.page.settings.directory.DownloadDirectoryPreferencesKt.DownloadDirectoryPreferences() calls=1</title><text x="298" y="366.3333333333333">ui.page.settings.directory.DownloadDire...</text></g><g class="entry-node"><rect x="40" y="50.0" width="180" height="38" rx="6"></rect><title>&lt;entry&gt; calls=0</title><text x="48" y="73.0">&lt;entry&gt;</text></g><g class="method-node"><rect x="790" y="50.0" width="180" height="38" rx="6"></rect><title>ui.common.CompositionLocalsKt.getLocalWindowWidthState() calls=1</title><text x="798" y="73.0">ui.common.CompositionLocalsKt.getLocalW...</text></g>
+        </svg>
+      </div>
+    </section>
+    <section class="panel">
+      <h2>高频方法</h2>
+      <input id="methodSearch" placeholder="搜索方法名">
+      <table id="methodTable"><thead><tr><th>方法</th><th>次数</th></tr></thead><tbody><tr><td><code>util.PreferenceUtil.getString()</code></td><td>2</td></tr><tr><td><code>ui.page.downloadv2.DownloadPageV2Kt.DownloadPageV2()</code></td><td>1</td></tr><tr><td><code>util.PreferenceUtil.getBoolean()</code></td><td>1</td></tr><tr><td><code>util.PreferenceUtil.getInt()</code></td><td>1</td></tr><tr><td><code>ui.page.AppEntryKt.AppEntry()</code></td><td>1</td></tr><tr><td><code>ui.page.NavigationDrawerKt.NavigationDrawer()</code></td><td>1</td></tr><tr><td><code>ui.common.CompositionLocalsKt.getLocalWindowWidthState()</code></td><td>1</td></tr><tr><td><code>ui.page.settings.directory.DownloadDirectoryPreferencesKt.DownloadDirectoryPreferences()</code></td><td>1</td></tr><tr><td><code>ui.page.settings.directory.DownloadDirectoryPreferencesKt.isValidDirectory()</code></td><td>1</td></tr></tbody></table>
+    </section>
+    <section class="panel">
+      <h2>高频调用关系</h2>
+      <input id="edgeSearch" placeholder="搜索调用方或被调用方">
+      <table id="edgeTable"><thead><tr><th>调用方</th><th>被调用方</th><th>次数</th></tr></thead><tbody><tr><td><code>&lt;entry&gt;</code></td><td><code>ui.page.downloadv2.DownloadPageV2Kt.DownloadPageV2()</code></td><td>1</td></tr><tr><td><code>ui.page.downloadv2.DownloadPageV2Kt.DownloadPageV2()</code></td><td><code>util.PreferenceUtil.getBoolean()</code></td><td>1</td></tr><tr><td><code>ui.page.downloadv2.DownloadPageV2Kt.DownloadPageV2()</code></td><td><code>util.PreferenceUtil.getString()</code></td><td>1</td></tr><tr><td><code>ui.page.downloadv2.DownloadPageV2Kt.DownloadPageV2()</code></td><td><code>util.PreferenceUtil.getInt()</code></td><td>1</td></tr><tr><td><code>&lt;entry&gt;</code></td><td><code>ui.page.AppEntryKt.AppEntry()</code></td><td>1</td></tr><tr><td><code>ui.page.AppEntryKt.AppEntry()</code></td><td><code>ui.page.NavigationDrawerKt.NavigationDrawer()</code></td><td>1</td></tr><tr><td><code>ui.page.NavigationDrawerKt.NavigationDrawer()</code></td><td><code>ui.common.CompositionLocalsKt.getLocalWindowWidthState()</code></td><td>1</td></tr><tr><td><code>&lt;entry&gt;</code></td><td><code>ui.page.settings.directory.DownloadDirectoryPreferencesKt.DownloadDirectoryPreferences()</code></td><td>1</td></tr><tr><td><code>ui.page.settings.directory.DownloadDirectoryPreferencesKt.DownloadDirectoryPreferences()</code></td><td><code>ui.page.settings.directory.DownloadDirectoryPreferencesKt.isValidDirectory()</code></td><td>1</td></tr><tr><td><code>ui.page.settings.directory.DownloadDirectoryPreferencesKt.DownloadDirectoryPreferences()</code></td><td><code>util.PreferenceUtil.getString()</code></td><td>1</td></tr></tbody></table>
+    </section>
+    <section class="panel">
+      <h2>异常事件</h2>
+      <table><thead><tr><th>方法</th><th>次数</th></tr></thead><tbody><tr><td colspan="2">未记录到异常事件</td></tr></tbody></table>
+    </section>
+  </main>
+  <script>
+    function bindSearch(inputId, tableId) {
+      const input = document.getElementById(inputId);
+      const rows = Array.from(document.querySelectorAll(`#${tableId} tbody tr`));
+      input.addEventListener('input', () => {
+        const text = input.value.toLowerCase();
+        for (const row of rows) {
+          row.style.display = row.textContent.toLowerCase().includes(text) ? '' : 'none';
+        }
+      });
+    }
+    bindSearch('methodSearch', 'methodTable');
+    bindSearch('edgeSearch', 'edgeTable');
+  </script>
+</body>
+</html>

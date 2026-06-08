@@ -35,6 +35,8 @@ bundletool-output/
 frida-callgraph/frida-server*
 frida-callgraph/*.xz
 frida-callgraph/trace_output.json
+frida-callgraph/frida-trace-output.log
 frida-callgraph/callgraph.dot
 frida-callgraph/callgraph.html
 frida-callgraph/callgraph-summary.md
+frida-callgraph/frida-trace-callgraph/
