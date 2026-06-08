@@ -51,7 +51,7 @@ tdd-score-app/
 
 ## 4. 已完成测试
 
-本次小项目已完成本地 JUnit 单元测试：
+本次小项目已完成 JUnit、MockK、Robolectric 和 Espresso 四类测试：
 
 - `ScoreCalculatorTest`
   - 验证三类题目分数汇总为总分。
@@ -63,24 +63,48 @@ tdd-score-app/
   - 验证提交成绩时会计算总分和等级。
   - 验证学生姓名会去除前后空格。
   - 验证成绩记录会保存到依赖的仓库对象。
+- `ScoreEntryServiceMockKTest`
+  - 使用 MockK 模拟 `ScoreRepository`。
+  - 验证业务服务调用依赖对象的 `save` 和 `findAll` 方法。
+  - 验证有依赖对象的业务逻辑可以脱离真实仓库单独测试。
+- `ScorePreferencesStoreRobolectricTest`
+  - 使用 Robolectric 提供 Android `Context`。
+  - 验证 `SharedPreferences` 中成绩记录的保存和读取。
+  - 覆盖不需要真机也能测试的 Android 相关逻辑。
+- `MainActivityEspressoTest`
+  - 启动成绩录入页面。
+  - 输入学生姓名和三类题目分数。
+  - 点击“计算并保存”按钮。
+  - 验证结果文本和历史记录文本显示正确。
 
 ## 5. 构建与验证结果
 
-由于当前环境不能联网下载新的 Gradle 依赖，本模块第一版采用 Android 原生控件和 JUnit 测试，减少外部依赖。执行时使用本机已有 Gradle、Java 21、Android SDK 中的 `aapt2`。
+执行时使用本机 Java 21、Gradle、Android SDK 中的 `aapt2`。为了避免中文路径和 Gradle 临时目录导致测试子进程异常，项目根目录提供了 CMD 脚本统一设置运行环境。
 
-已通过的验证：
-
-```powershell
-gradle :tdd-score-app:testDebugUnitTest
-```
-
-结果：`BUILD SUCCESSFUL`。
+本地单元测试、MockK 测试、Robolectric 测试和 APK 构建：
 
 ```powershell
-gradle :tdd-score-app:assembleDebug
+run-tdd-score-app.cmd
 ```
 
-结果：`BUILD SUCCESSFUL`。
+该脚本会执行：
+
+```text
+:tdd-score-app:testDebugUnitTest
+:tdd-score-app:assembleDebug
+```
+
+Espresso 界面测试需要先启动模拟器，再单独执行：
+
+```powershell
+run-tdd-score-app-espresso.cmd
+```
+
+该脚本会执行：
+
+```text
+:tdd-score-app:connectedDebugAndroidTest
+```
 
 生成 APK 位置：
 
@@ -90,13 +114,13 @@ tdd-score-app/build/outputs/apk/debug/tdd-score-app-debug.apk
 
 ## 6. 后续可扩展内容
 
-后续如果网络或 Gradle 缓存恢复，可以继续补充：
+后续可以继续补充：
 
-- MockK 测试：对 `ScoreRepository` 使用 MockK 验证 `ScoreEntryService` 的依赖调用。
-- Robolectric 测试：测试 `ScorePreferencesStore` 的 SharedPreferences 持久化逻辑。
-- Espresso 测试：测试页面启动、输入成绩、点击按钮、结果文本显示。
 - 数据持久化：把当前页面中的内存仓库替换为 SharedPreferences 或数据库仓库。
+- 更多业务规则：例如缺考、补考、成绩复核、不同试卷满分规则。
+- 更多界面流程：例如成绩列表页、成绩详情页、删除或修改成绩记录。
+- CI 配置：默认跑 `assembleDebug` 和 `testDebugUnitTest`，模拟器相关的 `connectedDebugAndroidTest` 单独执行。
 
 ## 7. 小结
 
-本次实践完成了一个独立的成绩电子化 Android 示例应用，并以 TDD 思路优先覆盖核心业务逻辑。当前版本已经能够本地构建、运行 JUnit 测试并生成 Debug APK，适合作为“基于 TDD 的考试试卷成绩电子化示例应用”的课堂实践材料。
+本次实践完成了一个独立的成绩电子化 Android 示例应用，并以 TDD 思路优先覆盖核心业务逻辑。当前版本包含 JUnit、MockK、Robolectric 和 Espresso 测试，能够覆盖纯业务逻辑、有依赖对象的业务服务、Android 存储逻辑以及简单界面交互，适合作为“基于 TDD 的考试试卷成绩电子化示例应用”的课堂实践材料。
