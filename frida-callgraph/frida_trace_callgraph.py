@@ -75,6 +75,10 @@ def extract_trace_rows(lines):
         if "Started tracing" in line or "Instrumenting" in line or "Resolving" in line:
             continue
 
+        if line.strip().startswith("<="):
+            rows.append({"type": "exit", "line": index + 1, "thread": current_thread, "raw": line})
+            continue
+
         match = None
         for candidate in JAVA_METHOD_RE.finditer(line):
             method = candidate.group("method")
@@ -91,6 +95,7 @@ def extract_trace_rows(lines):
 
         rows.append(
             {
+                "type": "enter",
                 "line": index + 1,
                 "thread": current_thread,
                 "column": match.start("method"),
@@ -105,6 +110,7 @@ def extract_trace_rows(lines):
 def normalize_method(method):
     method = method.strip()
     method = method.replace("com.junkfood.seal.", "")
+    method = re.sub(r"\(.*\)$", "()", method)
     method = re.sub(r"\s+", " ", method)
     return method
 
@@ -119,8 +125,33 @@ def edges_from_trace_rows(rows):
     if not rows:
         return Counter(), Counter(), Counter(), 0, "frida-trace"
 
+    if any(row.get("type") == "exit" for row in rows):
+        stacks = defaultdict(list)
+        edges = Counter()
+        methods = Counter()
+        enter_count = 0
+
+        for row in rows:
+            thread = row["thread"]
+            stack = stacks[thread]
+            if row.get("type") == "exit":
+                if stack:
+                    stack.pop()
+                continue
+
+            method = row["method"]
+            caller = stack[-1] if stack else "<entry>"
+            edges[(caller, method)] += 1
+            methods[method] += 1
+            stack.append(method)
+            enter_count += 1
+
+        return edges, methods, Counter(), enter_count, "frida-trace"
+
     min_column_by_thread = {}
     for row in rows:
+        if row.get("type") != "enter":
+            continue
         thread = row["thread"]
         min_column_by_thread[thread] = min(row["column"], min_column_by_thread.get(thread, row["column"]))
 
@@ -129,6 +160,8 @@ def edges_from_trace_rows(rows):
     methods = Counter()
 
     for row in rows:
+        if row.get("type") != "enter":
+            continue
         thread = row["thread"]
         base = min_column_by_thread.get(thread, row["column"])
         depth = max(0, int(round((row["column"] - base) / 2.0)))

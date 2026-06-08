@@ -20,12 +20,12 @@
 默认追踪以下范围：
 
 ```text
-com.junkfood.seal.util.PreferenceUtil!*/u
-com.junkfood.seal.ui.page.downloadv2.*!*/u
-com.junkfood.seal.ui.page.settings.*!*/u
+com.junkfood.seal.util.PreferenceUtil!get*/u
+com.junkfood.seal.util.PreferenceUtil!is*/u
+com.junkfood.seal.util.PreferenceUtil!containsKey/u
 ```
 
-这些范围覆盖了偏好配置读取、下载页面逻辑、设置页面逻辑，比较稳定，不依赖真机复杂操作，适合作为课堂实践的动态分析对象。
+这些范围覆盖了偏好配置读取、状态判断和键值检查逻辑，比较稳定，不依赖复杂页面操作，适合作为课堂实践的动态分析对象。实际测试中曾尝试追踪设置页和下载页的更大范围，但部分 R8 生成方法会导致 `frida-trace` 找不到 overload，因此最终选择了更稳定的业务工具类范围。
 
 ## 四、运行命令
 
@@ -51,16 +51,36 @@ python .\frida-callgraph\frida_trace_callgraph.py `
   --out-dir .\docs\frida-trace-callgraph-results
 ```
 
-## 五、样例验证结果
+## 五、模拟器实测结果
 
-当前已使用样例 `frida-trace` 日志完成脚本验证：
+当前已在 Pixel 8 / Android 14 / API 34 / x86_64 模拟器中完成 `frida-trace` 实测。运行过程中启动 Seal 应用并操作页面，生成了 `frida-callgraph/frida-trace-output.log` 日志，再由脚本转换为 HTML 调用图。
 
 | 指标 | 数量 |
 | --- | ---: |
-| 日志事件 | 10 |
-| 方法节点 | 9 |
-| 调用边 | 10 |
+| 日志事件 | 98 |
+| 方法节点 | 12 |
+| 调用边 | 17 |
 | 异常方法 | 0 |
+
+高频方法包括：
+
+| 方法 | 次数 |
+| --- | ---: |
+| `PreferenceUtil.getBoolean$default()` | 31 |
+| `PreferenceUtil.getBoolean()` | 31 |
+| `PreferenceUtil.getString$default()` | 8 |
+| `PreferenceUtil.getString()` | 8 |
+| `PreferenceUtil.getInt$default()` | 7 |
+| `PreferenceUtil.getInt()` | 7 |
+
+主要调用关系包括：
+
+| 调用方 | 被调用方 | 次数 |
+| --- | --- | ---: |
+| `<entry>` | `PreferenceUtil.getBoolean$default()` | 31 |
+| `PreferenceUtil.getBoolean$default()` | `PreferenceUtil.getBoolean()` | 31 |
+| `PreferenceUtil.getString$default()` | `PreferenceUtil.getString()` | 8 |
+| `PreferenceUtil.getInt$default()` | `PreferenceUtil.getInt()` | 7 |
 
 HTML 结果包含：
 

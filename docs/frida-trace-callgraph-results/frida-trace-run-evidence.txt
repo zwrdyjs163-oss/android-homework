@@ -1,0 +1,40 @@
+frida-trace call graph evidence
+===============================
+
+Date: 2026-06-08
+Project: Seal
+Package: com.junkfood.seal.debug
+
+Emulator
+--------
+AVD: Pixel_8
+Android: 14
+SDK: 34
+ABI: x86_64
+
+Runtime
+-------
+frida-server: running as root on emulator
+App PID during trace: 4297
+
+frida-trace patterns
+--------------------
+com.junkfood.seal.util.PreferenceUtil!get*/u
+com.junkfood.seal.util.PreferenceUtil!is*/u
+com.junkfood.seal.util.PreferenceUtil!containsKey/u
+
+Trace result
+------------
+Trace log: frida-callgraph/frida-trace-output.log
+Trace log size: 8939 bytes
+Traced functions: 28
+Parsed events: 98
+Method nodes: 12
+Call edges: 17
+Exception methods: 0
+
+Generated browser output
+------------------------
+docs/frida-trace-callgraph-results/frida-trace-callgraph.html
+docs/frida-trace-callgraph-results/frida-trace-callgraph-summary.md
+docs/frida-trace-callgraph-results/frida-trace-callgraph.json

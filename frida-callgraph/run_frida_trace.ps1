@@ -1,9 +1,9 @@
 param(
     [string]$PackageName = "com.junkfood.seal.debug",
     [string[]]$JavaMethod = @(
-        "com.junkfood.seal.util.PreferenceUtil!*/u",
-        "com.junkfood.seal.ui.page.downloadv2.*!*/u",
-        "com.junkfood.seal.ui.page.settings.*!*/u"
+        "com.junkfood.seal.util.PreferenceUtil!get*/u",
+        "com.junkfood.seal.util.PreferenceUtil!is*/u",
+        "com.junkfood.seal.util.PreferenceUtil!containsKey/u"
     ),
     [string]$Output = "frida-callgraph/frida-trace-output.log",
     [string]$Adb = "F:\AS_SDK\platform-tools\adb.exe",

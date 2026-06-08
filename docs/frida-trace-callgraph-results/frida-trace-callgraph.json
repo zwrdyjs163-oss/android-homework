@@ -1,96 +1,143 @@
 {
   "source_type": "frida-trace",
-  "event_count": 10,
-  "method_count": 9,
-  "edge_count": 10,
+  "event_count": 98,
+  "method_count": 12,
+  "edge_count": 17,
   "exception_method_count": 0,
   "methods": [
     {
-      "method": "util.PreferenceUtil.getString()",
-      "count": 2
+      "method": "PreferenceUtil.getBoolean$default()",
+      "count": 31
     },
     {
-      "method": "ui.page.downloadv2.DownloadPageV2Kt.DownloadPageV2()",
+      "method": "PreferenceUtil.getBoolean()",
+      "count": 31
+    },
+    {
+      "method": "PreferenceUtil.getString$default()",
+      "count": 8
+    },
+    {
+      "method": "PreferenceUtil.getString()",
+      "count": 8
+    },
+    {
+      "method": "PreferenceUtil.getInt$default()",
+      "count": 7
+    },
+    {
+      "method": "PreferenceUtil.getInt()",
+      "count": 7
+    },
+    {
+      "method": "PreferenceUtil.getSponsorBlockCategories()",
       "count": 1
     },
     {
-      "method": "util.PreferenceUtil.getBoolean()",
+      "method": "PreferenceUtil.getAudioConvertFormat()",
       "count": 1
     },
     {
-      "method": "util.PreferenceUtil.getInt()",
+      "method": "PreferenceUtil.getVideoFormat()",
       "count": 1
     },
     {
-      "method": "ui.page.AppEntryKt.AppEntry()",
+      "method": "PreferenceUtil.getVideoResolution()",
       "count": 1
     },
     {
-      "method": "ui.page.NavigationDrawerKt.NavigationDrawer()",
+      "method": "PreferenceUtil.getMaxDownloadRate()",
       "count": 1
     },
     {
-      "method": "ui.common.CompositionLocalsKt.getLocalWindowWidthState()",
-      "count": 1
-    },
-    {
-      "method": "ui.page.settings.directory.DownloadDirectoryPreferencesKt.DownloadDirectoryPreferences()",
-      "count": 1
-    },
-    {
-      "method": "ui.page.settings.directory.DownloadDirectoryPreferencesKt.isValidDirectory()",
+      "method": "PreferenceUtil.containsKey()",
       "count": 1
     }
   ],
   "edges": [
     {
       "source": "<entry>",
-      "target": "ui.page.downloadv2.DownloadPageV2Kt.DownloadPageV2()",
+      "target": "PreferenceUtil.getBoolean$default()",
+      "count": 31
+    },
+    {
+      "source": "PreferenceUtil.getBoolean$default()",
+      "target": "PreferenceUtil.getBoolean()",
+      "count": 31
+    },
+    {
+      "source": "PreferenceUtil.getString$default()",
+      "target": "PreferenceUtil.getString()",
+      "count": 8
+    },
+    {
+      "source": "PreferenceUtil.getInt$default()",
+      "target": "PreferenceUtil.getInt()",
+      "count": 7
+    },
+    {
+      "source": "<entry>",
+      "target": "PreferenceUtil.getString$default()",
+      "count": 6
+    },
+    {
+      "source": "<entry>",
+      "target": "PreferenceUtil.getInt$default()",
+      "count": 4
+    },
+    {
+      "source": "<entry>",
+      "target": "PreferenceUtil.getSponsorBlockCategories()",
       "count": 1
     },
     {
-      "source": "ui.page.downloadv2.DownloadPageV2Kt.DownloadPageV2()",
-      "target": "util.PreferenceUtil.getBoolean()",
-      "count": 1
-    },
-    {
-      "source": "ui.page.downloadv2.DownloadPageV2Kt.DownloadPageV2()",
-      "target": "util.PreferenceUtil.getString()",
-      "count": 1
-    },
-    {
-      "source": "ui.page.downloadv2.DownloadPageV2Kt.DownloadPageV2()",
-      "target": "util.PreferenceUtil.getInt()",
+      "source": "PreferenceUtil.getSponsorBlockCategories()",
+      "target": "PreferenceUtil.getString$default()",
       "count": 1
     },
     {
       "source": "<entry>",
-      "target": "ui.page.AppEntryKt.AppEntry()",
+      "target": "PreferenceUtil.getAudioConvertFormat()",
       "count": 1
     },
     {
-      "source": "ui.page.AppEntryKt.AppEntry()",
-      "target": "ui.page.NavigationDrawerKt.NavigationDrawer()",
-      "count": 1
-    },
-    {
-      "source": "ui.page.NavigationDrawerKt.NavigationDrawer()",
-      "target": "ui.common.CompositionLocalsKt.getLocalWindowWidthState()",
+      "source": "PreferenceUtil.getAudioConvertFormat()",
+      "target": "PreferenceUtil.getInt$default()",
       "count": 1
     },
     {
       "source": "<entry>",
-      "target": "ui.page.settings.directory.DownloadDirectoryPreferencesKt.DownloadDirectoryPreferences()",
+      "target": "PreferenceUtil.getVideoFormat()",
       "count": 1
     },
     {
-      "source": "ui.page.settings.directory.DownloadDirectoryPreferencesKt.DownloadDirectoryPreferences()",
-      "target": "ui.page.settings.directory.DownloadDirectoryPreferencesKt.isValidDirectory()",
+      "source": "PreferenceUtil.getVideoFormat()",
+      "target": "PreferenceUtil.getInt$default()",
       "count": 1
     },
     {
-      "source": "ui.page.settings.directory.DownloadDirectoryPreferencesKt.DownloadDirectoryPreferences()",
-      "target": "util.PreferenceUtil.getString()",
+      "source": "<entry>",
+      "target": "PreferenceUtil.getVideoResolution()",
+      "count": 1
+    },
+    {
+      "source": "PreferenceUtil.getVideoResolution()",
+      "target": "PreferenceUtil.getInt$default()",
+      "count": 1
+    },
+    {
+      "source": "<entry>",
+      "target": "PreferenceUtil.getMaxDownloadRate()",
+      "count": 1
+    },
+    {
+      "source": "PreferenceUtil.getMaxDownloadRate()",
+      "target": "PreferenceUtil.getString$default()",
+      "count": 1
+    },
+    {
+      "source": "<entry>",
+      "target": "PreferenceUtil.containsKey()",
       "count": 1
     }
   ],

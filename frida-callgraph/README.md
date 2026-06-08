@@ -55,9 +55,9 @@ F:\AS_SDK\platform-tools\adb.exe shell pidof com.junkfood.seal.debug
 默认追踪以下 Java 方法范围：
 
 ```text
-com.junkfood.seal.util.PreferenceUtil!*/u
-com.junkfood.seal.ui.page.downloadv2.*!*/u
-com.junkfood.seal.ui.page.settings.*!*/u
+com.junkfood.seal.util.PreferenceUtil!get*/u
+com.junkfood.seal.util.PreferenceUtil!is*/u
+com.junkfood.seal.util.PreferenceUtil!containsKey/u
 ```
 
 含义：
@@ -78,7 +78,7 @@ frida-callgraph/frida-trace-output.log
 
 ```powershell
 .\frida-callgraph\run_frida_trace.ps1 `
-  -JavaMethod "com.junkfood.seal.util.PreferenceUtil!*/u","com.junkfood.seal.download.*!*/u"
+  -JavaMethod "com.junkfood.seal.util.PreferenceUtil!get*/u","com.junkfood.seal.download.*!*/u"
 ```
 
 ## 生成浏览器调用图
