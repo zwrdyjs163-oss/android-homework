@@ -1,0 +1,7 @@
+APKTool lab patch summary
+DecodedDir=F:\study\Android\Seal-main\apktool-lab\work\decoded
+SmaliPatch=F:\study\Android\Seal-main\apktool-lab\work\decoded\smali_classes15\com\junkfood\seal\MainActivity.smali
+InsertedLogTag=APKTOOL_LAB
+InsertedLogMessage=Seal repackaged by apktool lab
+ResourcePatch=F:\study\Android\Seal-main\apktool-lab\work\decoded\res\values\strings.xml
+AppName=Seal APKTool Lab

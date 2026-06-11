@@ -1,0 +1,13 @@
+ Volume in drive F is 新加卷
+ Volume Serial Number is 5097-75EA
+
+ Directory of F:\study\Android\Seal-main\apktool-lab\output
+
+2026/06/11  08:52    <DIR>          .
+2026/06/11  08:52    <DIR>          ..
+2026/06/11  08:52       163,761,399 seal-repacked-aligned.apk
+2026/06/11  08:52       163,850,064 seal-repacked-signed.apk
+2026/06/11  08:52         1,299,998 seal-repacked-signed.apk.idsig
+2026/06/11  08:52       163,760,974 seal-repacked-unaligned.apk
+               4 File(s)    492,672,435 bytes
+               2 Dir(s)  191,504,400,384 bytes free
